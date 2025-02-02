@@ -1,0 +1,22 @@
+microservices:
+  users:
+    port: 3002
+
+    # Настройки модуля авторизации
+    auth:
+      access-token:
+        jwt-secret: 'J*(_HD("L!@_UJDA_Ka`ksd-;"dalsdjouad0ba))'
+        jwt-expires-in: '180s'
+      refresh-token:
+        jwt-secret: 'AK(_)J*&@H_DAK"LSDJA_GDH{ID@PAJD*AHDA_)Ii9qwudi08qjd0d}'
+        jwt-expires-in: '360s'
+
+    # База данных приложения
+    db:
+      host: '127.0.0.1'
+      port: 5432
+      username: 'root'
+      password: 'ID)+JDK:LAK-1=[lsvb"]'
+      database: 'users'
+      synchronize: true
+      auto-load-entities: true
