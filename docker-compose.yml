@@ -1,0 +1,13 @@
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 'ID)+JDK:LAK-1=[lsvb"]'
+      POSTGRES_DB: users
+    ports:
+      # Закрываем внешний порт БД
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data

@@ -1,0 +1,18 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "cSpell.ignoreRegExpList": [
+    "\\S*микросервис\\S*",
+    "\\S*хэш\\S*",
+    "\\S*чанк\\S*",
+    "\\S*роут\\S*",
+    "\\S*парс\\S*",
+    "\\S*валид\\S*",
+    "токен\\S*",
+    "миддлвар\\S*",
+    "dto\\S*",
+    "swrv\\S*"
+  ],
+  "cSpell.words": ["typeorm", "фронтэнд", "бэкенд", "timestamptz", "vite"],
+  "cSpell.language": "en,ru"
+}
