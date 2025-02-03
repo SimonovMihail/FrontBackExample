@@ -1,7 +1,8 @@
+import '/src/assets/main.css';
 import { createApp } from 'vue'
+import type { Component } from 'vue'
 
 import App from './views/App.vue'
-import './assets/main.css'
 
 // Импортируем CSS Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -13,7 +14,11 @@ import 'bootstrap'
 
 const app = createApp(App)
 
-app.mount('#app')
+// ЭЛЕМЕНТ ПЛЮС
+import ElementPlus from 'element-plus'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import 'element-plus/theme-chalk/display.css'
+import 'element-plus/dist/index.css'
 
 
 // ТУТ СТРАНИЧКИ ПОДКЛЮЧАТЬ БУДЕМ
@@ -57,4 +62,20 @@ const router = createRouter({
     routes,
 })
 
+// С помощью этой штуки меняется имя страницы
+router.afterEach((to, from) => {
+    const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+    if (nearestWithTitle) {
+        document.title = nearestWithTitle.meta.title as string;
+    }
+});
+
+// ДЛЯ ИКОНОК
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component as Component)
+}
+
+// ВАЖНОЕ
 app.use(router)
+app.mount('#app')
+app.use(ElementPlus)

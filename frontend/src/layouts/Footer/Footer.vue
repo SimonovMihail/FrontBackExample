@@ -4,7 +4,7 @@
     <el-row type="flex" justify="center" :gutter="20">
       <div>
         <a href="https://www.tyuiu.ru/">
-          <img src="../assets/img/logo_bot.png" alt="">
+          <img src="../../assets/img/logo_bot.png" alt="">
         </a>
       </div>      
       <div>

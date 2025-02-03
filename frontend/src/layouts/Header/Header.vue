@@ -2,7 +2,7 @@
   <!--header-------------------------------------------------------------------------------------------------------------------->
   <el-header class="main-header">
         <el-row type="flex" justify="center" :gutter="20">
-          <img src="../assets/img/logo_top.png" alt="" @click=Main()>
+          <img src="../../assets/img/logo_top.png" alt="" @click=Main()>
           <el-col :span="9" :offset="7" > <!-- Спаном можешь больше места кнопкам выделить -->
             <div class="row-bg">
               <el-button type="primary" plain round @click="Move_To_Judge()">Страница жюри</el-button>
@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
-import {onMounted, ref} from 'vue';
+import { onMounted } from 'vue';
 
 const router = useRouter();
 
@@ -162,13 +162,9 @@ img {
 
 
 @media (max-width: 1365px) {
-img {
-  height: 40px;
-}
-
-
-
-
+  img {
+    height: 40px;
+  }
 }
 
 @media (max-width: 952px) {
