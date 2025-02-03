@@ -1,4 +1,5 @@
 <template>
+  <!-- ЭТО ПРИМЕР -->
   <BaseLayout>
     <h1>{{ user?.email }}</h1>
   </BaseLayout>

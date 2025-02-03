@@ -1,5 +1,6 @@
 <template>
   <BaseLayout>
+    <!-- ЭТО ПРИМЕР -->
     <h1>Guest View</h1>
   </BaseLayout>
 </template>

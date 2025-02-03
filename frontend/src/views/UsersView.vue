@@ -1,4 +1,5 @@
 <template>
+  <!-- ЭТО ПРИМЕР -->
   <BaseLayout>
     <h1>Users List</h1>
 
