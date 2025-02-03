@@ -1,67 +1,37 @@
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
+@import './base.css';
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-:focus,
-:active {
-  outline: none;
-}
-
-a:focus,
-a:active {
-  outline: none;
-}
-
-input,
-button,
-textarea {
-  border: 0;
-
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-button {
-  background-color: inherit;
-
-  cursor: pointer;
+/*
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
 }
 
 a,
-a:visited {
+.green {
   text-decoration: none;
-  font-family: inherit;
-  font-size: inherit;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
 }
 
-a:hover {
-  text-decoration: none;
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
 }
 
-img {
-  display: block;
-}
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: inherit;
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
 }
-
-p {
-  padding: 0;
-  margin: 0;
-}
+  */
