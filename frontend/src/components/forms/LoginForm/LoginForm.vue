@@ -29,6 +29,7 @@ import loginInputs from './LoginFormInputs'
 import FormLayout from '@/layouts/FormLayout/FormLayout.vue'
 import api from '@/api'
 import { useRoute, useRouter } from 'vue-router'
+import {UserRoleEnum} from "@/types/users.types.ts";
 
 const router = useRouter()
 
@@ -42,6 +43,14 @@ const { handleSubmit } = useForm({
 const handleLogin = handleSubmit(async (values) => {
   await api.auth
     .login({ email: values.email, password: values.password })
-    .then(() => router.push('/'))
+    .then(async () => {
+      const currentUser = await api.users.getCurrentUser();
+      if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.ADMIN)) {
+        router.push('/users');
+      }
+      else {
+        router.push('/');
+      }
+    })
 })
 </script>
