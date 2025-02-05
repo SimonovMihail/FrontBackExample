@@ -1,7 +1,8 @@
 <template>
   <div class="min-vh-100">
     <header class="p-2 h-10 w-100 position-static top-0 start-0">
-      <button class="btn btn-primary" @click="navigateLogin">Войти</button>
+      <button v-if="isLogin()" class="btn btn-primary" @click="navigateLogin">Войти</button>
+      <button v-else class="btn btn-primary" @click="navigateLogin">{{getUserName()}}</button>
 
       <!-- ADMIN BUTTONS -->
       <template v-if="isAdmin()">
@@ -41,6 +42,10 @@ function navigateUsersList() {
   push('/users')
 }
 
+function isLogin(): boolean {
+  return user.value === null;
+}
+
 function isAdmin(): boolean {
   const roles = user.value?.roles.map(({ name }) => name)
   return roles?.includes(UserRoleEnum.ADMIN) ?? false
@@ -49,5 +54,9 @@ function isAdmin(): boolean {
 function isClient(): boolean {
   const roles = user.value?.roles.map(({ name }) => name)
   return roles?.includes(UserRoleEnum.CLIENT) ?? false
+}
+
+function getUserName() {
+  return user.value?.roles.map(({ name }) => name).join(",")
 }
 </script>
