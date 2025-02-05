@@ -1,4 +1,4 @@
-import '/src/assets/main.css';
+import './assets/main.css';
 import { createApp } from 'vue'
 import type { Component } from 'vue'
 
@@ -21,6 +21,7 @@ import 'element-plus/theme-chalk/display.css'
 import 'element-plus/dist/index.css'
 
 
+
 // ТУТ СТРАНИЧКИ ПОДКЛЮЧАТЬ БУДЕМ
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from "@/views/Login.vue";
@@ -28,8 +29,32 @@ import ChangeParticipantEntry from "@/views/ChangeParticipantEntry.vue";
 import ParticipantEntry from "@/views/ParticipantEntry.vue";
 import Registration from "@/views/Registration.vue";
 import Admin from "@/views/Admin.vue";
+import Information from "@/views/Information.vue";
+import Lk from "@/views/Lk.vue";
+import Judge from "@/views/Judge.vue";
+import LkUserdataEdit from "@/views/LkUserdataEdit.vue";
 
 const routes = [
+    {
+        path: '/',
+        component: Information,
+        meta: { title: 'Главная страница' },
+    },
+    {
+        path: '/lk',
+        component: Lk,
+        meta: { title: 'Личный кабинет' },
+    },
+    {
+        path: '/lk_userdata_edit',
+        component: LkUserdataEdit,
+        meta: { title: 'Редактировать профиль' },
+    },  
+    {
+        path: '/judge',
+        component: Judge,
+        meta: { title: 'Страница жюри' },
+    },
     {
         path: '/participantEntry',
         component: ParticipantEntry,
