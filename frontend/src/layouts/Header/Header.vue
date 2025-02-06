@@ -5,12 +5,13 @@
           <img src="../../assets/img/logo_top.png" alt="" @click=Main()>
           <el-col :span="9" :offset="7" > <!-- Спаном можешь больше места кнопкам выделить -->
             <div class="row-bg">
-              <el-button type="primary" plain round @click="Move_To_Judge()">Страница жюри</el-button>
-              <el-button type="primary" plain round @click="Move_To_Admin()">Админка</el-button>
-              <el-button type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
-              <el-button type="primary" plain round @click="Move_To_ParticipantEntry()">Подать заявку</el-button>
-              <el-button type="primary" plain round @click="Move_To_Login()">Вход</el-button>
-              <div class="lk-button">
+              <el-button v-if="isJudge()" type="primary" plain round @click="Move_To_Judge()">Страница жюри</el-button>
+              <el-button v-if="isAdmin()" type="primary" plain round @click="Move_To_Admin()">Админка</el-button>
+              <el-button v-if="isLogin()" type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
+              <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_ParticipantEntry()">Подать заявку</el-button>
+              <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_Login()">Вход</el-button>
+              <el-button v-if="isAdmin()" type="primary" plain round @click="exitAccount()">Выход</el-button>
+              <div v-if="isLogin()" class="lk-button">
                 <el-button type="primary" plain circle class="lk-button__avatar">
                   <el-avatar :size="25"
                              src="https://avatars.mds.yandex.net/i?id=a58aa42c311bff2d24a063699f0a546bfc2db3996a074653-12471101-images-thumbs&n=13"
@@ -18,7 +19,7 @@
                 </el-button>
                 <ul class="lk-button__avatar-dropdown-menu">
                   <li class="avatar-dropdown-menu__item1" @click="Move_To_Lk()">Личный кабинет</li>
-                  <li class="avatar-dropdown-menu__item2" @click="">Выйти</li> <!-- Тут должна быть функция выхода из учётной записи -->
+                  <li class="avatar-dropdown-menu__item2">Выйти</li> <!-- Тут должна быть функция выхода из учётной записи -->
                 </ul>
               </div>
             </div>
@@ -32,7 +33,11 @@
 
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+import api from "@/api";
+import { UserRoleEnum, type UserDTO } from "@/types/users.types";
+
+const user = ref<UserDTO | null>(null);
 
 const router = useRouter();
 
@@ -79,9 +84,9 @@ function Move_To_Judge() {
 }
 
 
-// Эта конструкция отвечает за функцию открывания и закрывания выпадающей менюшки
-// Одним кликом и открываешь и закрываешь
-onMounted(() => {
+// Эта конструкция отвечает за функцию открывания и закрывания выпадающей менюшки, одним кликом и открываешь и закрываешь
+// А так же получение данных о текущем пользователе
+onMounted(async () => {
   const avatarButton = document.querySelector('.lk-button__avatar') as HTMLElement;
   const menu = document.querySelector('.lk-button__avatar-dropdown-menu') as HTMLElement;
 
@@ -94,7 +99,24 @@ onMounted(() => {
       }
     }
   });
+
+  const currentUser = await api.users.getCurrentUser();
+  user.value = currentUser;
 });
+
+function isLogin(): boolean {
+  return !(user.value === null);
+}
+
+function isAdmin(): boolean {
+  const roles = user.value?.roles.map(({ name }) => name);
+  return roles?.includes(UserRoleEnum.ADMIN) ?? false;
+}
+
+function isJudge(): boolean {
+  const roles = user.value?.roles.map(({ name }) => name);
+  return roles?.includes(UserRoleEnum.JUDGE) ?? false;
+}
 </script>
 
 <style scoped>

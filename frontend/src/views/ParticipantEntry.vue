@@ -3,7 +3,7 @@
     <div class="wrapper-for-correct-viewport">
       <Header/>
       <div class="wrapper">
-        <div class="wrapper__main-container">
+        <div v-if="isLogin()" class="wrapper__main-container">
           <h1 class="main-container-name">Подать заявку</h1>
           <el-form
               :model="participantEntryFormModel"
@@ -181,6 +181,11 @@
           </el-form>
           <el-button class="button-confirm" type="primary" @click="submitParticipantEntryForm">Подать заяку</el-button>
         </div>
+        <div v-if="!isLogin()" class="wrapper__attention-container">
+          <h1 class="attention-container-name">Внимание</h1>
+          <p class="attention-container-content">Для возможности подачи заявки необходимо войти в аккаунт.</p>
+          <el-button class="attention-container-content__move-to-login-button" type="primary" @click="Move_To_Login()">Войти в аккаунт</el-button>
+        </div>
       </div>
       <Footer/>
     </div>
@@ -188,10 +193,16 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 import { ElForm, ElInput, ElButton, ElScrollbar, FormInstance, FormRules } from 'element-plus';
 import Header from '../layouts/Header/Header.vue';
 import Footer from '../layouts/Footer/Footer.vue';
+import api from "@/api";
+import { UserRoleEnum, type UserDTO } from "@/types/users.types";
+
+const user = ref<UserDTO | null>(null);
 
 const participantEntryFormModel = ref({ // Здесь сохранаются данные формы
   team_lead_fio: '',
@@ -365,6 +376,21 @@ const scroll = ({ scrollTop }) => {
   const value = ref(0);
   value.value = scrollTop;
 };
+
+onMounted(async () => {
+  const currentUser = await api.users.getCurrentUser();
+  user.value = currentUser;
+});
+
+function Move_To_Login() {
+  router.push({
+    path: '/login'
+  });
+}
+
+function isLogin(): boolean {
+  return !(user.value === null);
+}
 </script>
 
 
@@ -383,7 +409,17 @@ const scroll = ({ scrollTop }) => {
   align-items: center;
 }
 
-.wrapper .wrapper__main-container {
+.wrapper__main-container {
+  color: black;
+  margin: 5% auto;
+  padding: 20px;
+  box-shadow: 1px 2px 2px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #fff;
+  border-radius: 2%;
+}
+
+.wrapper__attention-container {
   color: black;
   margin: 5% auto;
   padding: 20px;
@@ -395,6 +431,14 @@ const scroll = ({ scrollTop }) => {
 
 .main-container-name {
   padding-bottom: 20px;
+}
+
+.attention-container-name {
+  padding-bottom: 20px;
+}
+
+.attention-container-content__move-to-login-button {
+  margin-top: 25px;
 }
 
 .participantEntry-form { /* Эта штука как раз и будет отвечать за гридовое расположение блоков регистрации */
