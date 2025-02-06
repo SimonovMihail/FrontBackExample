@@ -3,7 +3,9 @@
  */
 export enum UserRoleEnum {
   ADMIN = 'admin',
-  CLIENT = 'client',
+  CLIENT = 'client', // ЭТО ТИМЛИД
+  JUDGE = 'judge',
+  TEAM_MEMBER = 'team_member',
 }
 
 /**

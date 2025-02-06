@@ -1,16 +1,18 @@
-import './assets/main.css';
 import { createApp } from 'vue'
 import type { Component } from 'vue'
 
 import App from './views/App.vue'
 
-// Импортируем CSS Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-// Подключаем стили Bootstrap Icons
-import 'bootstrap-icons/font/bootstrap-icons.css'
+// ВРЕМЕННО ВЫКЛЮЧИЛ, ПЕРЕЗАПИСЫВАЕТ СТИЛИ НАШЕГО ПРОЕКТА
+// // Импортируем CSS Bootstrap
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// // Подключаем стили Bootstrap Icons
+// import 'bootstrap-icons/font/bootstrap-icons.css'
+//
+// // Если нужно подключить JS Bootstrap (например, для модальных окон, тултипов и т.д.)
+// import 'bootstrap'
 
-// Если нужно подключить JS Bootstrap (например, для модальных окон, тултипов и т.д.)
-import 'bootstrap'
+import './assets/main.css';
 
 const app = createApp(App)
 
