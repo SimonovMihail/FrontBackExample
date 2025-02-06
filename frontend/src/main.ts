@@ -38,11 +38,6 @@ import LkUserdataEdit from "@/views/LkUserdataEdit.vue";
 
 const routes = [
     {
-        path: '/',
-        component: Information,
-        meta: { title: 'Главная страница' },
-    },
-    {
         path: '/lk',
         component: Lk,
         meta: { title: 'Личный кабинет' },
@@ -51,11 +46,6 @@ const routes = [
         path: '/lk_userdata_edit',
         component: LkUserdataEdit,
         meta: { title: 'Редактировать профиль' },
-    },  
-    {
-        path: '/judge',
-        component: Judge,
-        meta: { title: 'Страница жюри' },
     },
     {
         path: '/participantEntry',
@@ -81,6 +71,16 @@ const routes = [
         path: '/admin',
         component: Admin,
         meta: { title: 'Страница Администратора' },
+    },
+    {
+        path: '/judge',
+        component: Judge,
+        meta: { title: 'Страница жюри' },
+    },
+    {
+        path: '/',
+        component: Information,
+        meta: { title: 'Главная страница' },
     },
 ]
 

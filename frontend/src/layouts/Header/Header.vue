@@ -5,11 +5,11 @@
           <img src="../../assets/img/logo_top.png" alt="" @click=Main()>
           <el-col :span="9" :offset="7" > <!-- Спаном можешь больше места кнопкам выделить -->
             <div class="row-bg">
-              <el-button v-if="isLogin() && (isClient() || isTeamMember())" type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
+              <el-button v-if="isLogin() && isClient()" type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
               <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_ParticipantEntry()">Подать заявку</el-button>
               <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_Login()">Вход</el-button>
               <el-button v-if="isAdmin() || isJudge()" type="primary" plain round @click="exitAccount()">Выход</el-button>
-              <div v-if="isLogin()" class="lk-button">
+              <div v-show="isLogin() && (isTeamMember() || isClient())" class="lk-button">
                 <el-button type="primary" plain circle class="lk-button__avatar">
                   <el-avatar :size="25"
                              src="https://avatars.mds.yandex.net/i?id=a58aa42c311bff2d24a063699f0a546bfc2db3996a074653-12471101-images-thumbs&n=13"
