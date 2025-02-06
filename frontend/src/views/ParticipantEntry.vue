@@ -195,12 +195,13 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
-const router = useRouter();
 import { ElForm, ElInput, ElButton, ElScrollbar, FormInstance, FormRules } from 'element-plus';
 import Header from '../layouts/Header/Header.vue';
 import Footer from '../layouts/Footer/Footer.vue';
 import api from "@/api";
 import { UserRoleEnum, type UserDTO } from "@/types/users.types";
+
+const router = useRouter();
 
 const user = ref<UserDTO | null>(null);
 

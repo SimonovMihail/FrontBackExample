@@ -5,12 +5,10 @@
           <img src="../../assets/img/logo_top.png" alt="" @click=Main()>
           <el-col :span="9" :offset="7" > <!-- Спаном можешь больше места кнопкам выделить -->
             <div class="row-bg">
-              <el-button v-if="isJudge()" type="primary" plain round @click="Move_To_Judge()">Страница жюри</el-button>
-              <el-button v-if="isAdmin()" type="primary" plain round @click="Move_To_Admin()">Админка</el-button>
-              <el-button v-if="isLogin()" type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
+              <el-button v-if="isLogin() && (isClient() || isTeamMember())" type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
               <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_ParticipantEntry()">Подать заявку</el-button>
               <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_Login()">Вход</el-button>
-              <el-button v-if="isAdmin()" type="primary" plain round @click="exitAccount()">Выход</el-button>
+              <el-button v-if="isAdmin() || isJudge()" type="primary" plain round @click="exitAccount()">Выход</el-button>
               <div v-if="isLogin()" class="lk-button">
                 <el-button type="primary" plain circle class="lk-button__avatar">
                   <el-avatar :size="25"
@@ -71,18 +69,6 @@ function Move_To_Login() {
   });
 }
 
-function Move_To_Admin() {
-  router.push({
-    path: '/admin'
-  });
-}
-
-function Move_To_Judge() {
-  router.push({
-    path: '/judge'
-  });
-}
-
 
 // Эта конструкция отвечает за функцию открывания и закрывания выпадающей менюшки, одним кликом и открываешь и закрываешь
 // А так же получение данных о текущем пользователе
@@ -116,6 +102,16 @@ function isAdmin(): boolean {
 function isJudge(): boolean {
   const roles = user.value?.roles.map(({ name }) => name);
   return roles?.includes(UserRoleEnum.JUDGE) ?? false;
+}
+
+function isClient(): boolean {
+  const roles = user.value?.roles.map(({ name }) => name);
+  return roles?.includes(UserRoleEnum.CLIENT) ?? false;
+}
+
+function isTeamMember(): boolean {
+  const roles = user.value?.roles.map(({ name }) => name);
+  return roles?.includes(UserRoleEnum.TEAM_MEMBER) ?? false;
 }
 </script>
 

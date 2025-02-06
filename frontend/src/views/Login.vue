@@ -12,7 +12,7 @@
               class="registration-form"
               label-width="70px"
               label-position="left"
-              @submit.prevent="submitForm"
+              @submit.prevent="submitLogin"
           >
             <el-form-item label="Email:" prop="email">
               <el-input class="input-email" v-model="formModel.email"></el-input>
@@ -21,7 +21,7 @@
               <el-input type="password" class="input-password" v-model="formModel.password"></el-input>
             </el-form-item>
             <div class="button-container">
-              <el-button class="button-confirm" type="primary" @click="submitForm">Войти</el-button>
+              <el-button class="button-confirm" type="primary" @click="submitLogin">Войти</el-button>
               <el-button class="button-move-to-register" type="info" @click="Move_To_Register">Зарегистрироваться</el-button>
             </div>
           </el-form>
@@ -38,6 +38,8 @@ import { ElForm, ElInput, ElButton, ElScrollbar, FormInstance, FormRules } from 
 import Header from '../layouts/Header/Header.vue';
 import Footer from '../layouts/Footer/Footer.vue';
 import { useRouter } from 'vue-router';
+import api from "@/api";
+import { UserRoleEnum } from "@/types/users.types.ts";
 
 const router = useRouter();
 
@@ -58,17 +60,58 @@ const rules: FormRules = {
 
 const formRef = ref<FormInstance>();
 
-const submitForm = () => {
-  formRef.value?.validate((valid) => {
-    if (valid) {
-      console.log('Form sent', formModel.value);
-      console.log(formModel.value.email);
-    } else {
-      console.error('Form error');
-      alert('Заполните недостающие поля!');
+const submitLogin = async () => {
+  const valid = await formRef.value?.validate();
+
+  if (valid) {
+    try {
+      const loginRequest = {
+        email: formModel.value.email,
+        password: formModel.value.password,
+      };
+
+      await api.auth.login(loginRequest);
+      const currentUser = await api.users.getCurrentUser();
+
+      if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.ADMIN)) {
+        Move_To_Admin();
+      }
+      else if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.CLIENT)) {
+        Move_To_Main();
+      }
+      else if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.TEAM_MEMBER)) {
+        Move_To_Main();
+      }
+      else if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.JUDGE)) {
+        Move_To_Judge();
+      }
+    } catch (error) {
+      console.error('Ошибка при попытке входа в систему', error);
+      alert('Ошибка при попытке входа в систему');
     }
-  });
+  } else {
+    console.error('Form error');
+    alert('Заполните недостающие поля!');
+  }
 };
+
+function Move_To_Main() {
+  router.push({
+    path: `/`
+  });
+}
+
+function Move_To_Admin() {
+  router.push({
+    path: '/admin'
+  });
+}
+
+function Move_To_Judge() {
+  router.push({
+    path: '/judge'
+  });
+}
 
 const scroll = ({ scrollTop }) => {
   value.value = scrollTop;
