@@ -1,6 +1,6 @@
 <template>
   <BaseLayout>
-    <h1>Сюда вставить содержимое без меню и подвала</h1>
+    <h1 style="font-size: 100px; color: red">СТРАНИЦА СУДЬИ</h1>
   </BaseLayout>
 </template>
 

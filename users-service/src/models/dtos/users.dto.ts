@@ -4,6 +4,8 @@
 export enum UserRoleEnum {
   ADMIN = 'admin',
   CLIENT = 'client',
+  JUDGE = 'judge',
+  TEAM_MEMBER = 'team_member',
 }
 
 /**

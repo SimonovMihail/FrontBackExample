@@ -48,8 +48,8 @@ const handleLogin = handleSubmit(async (values) => {
       if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.ADMIN)) {
         router.push('/users');
       }
-      else {
-        router.push('/');
+      else if (currentUser.roles.map(({ name }) => name).includes(UserRoleEnum.JUDGE)) {
+        router.push('/judge');
       }
     })
 })

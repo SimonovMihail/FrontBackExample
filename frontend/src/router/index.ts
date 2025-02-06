@@ -11,6 +11,7 @@ import UsersView from '@/views/UsersView.vue'
 import UsersCreateView from '@/views/UsersCreateView.vue'
 import GuestView from '@/views/GuestView.vue'
 import UserEditView from '@/views/UserEditView.vue'
+import JudgeView from "@/views/JudgeView.vue";
 
 /**
  * Доступные страницы приложения
@@ -22,6 +23,11 @@ const routes: RouteRecordRaw[] = [
     path: '/users',
     component: UsersView,
     meta: { requiresAuth: true, roles: [UserRoleEnum.ADMIN] }
+  },
+  {
+    path: '/judge',
+    component: JudgeView,
+    meta: { requiresAuth: true, roles: [UserRoleEnum.JUDGE] }
   },
   {
     path: '/users/:id',
