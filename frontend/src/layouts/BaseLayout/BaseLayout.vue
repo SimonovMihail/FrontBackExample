@@ -11,6 +11,7 @@
       </template>
 
       <button v-show="isClient()" class="btn btn-primary">Client</button>
+      <button v-if="!isLogin()" class="btn btn-danger" @click="exitAccount">Выйти</button>
     </header>
 
     <slot></slot>
@@ -59,4 +60,15 @@ function isClient(): boolean {
 function getUserName() {
   return user.value?.roles.map(({ name }) => name).join(",")
 }
+
+const exitAccount = async () => {
+  try {
+    await api.auth.logout(); // Вызовите метод logout из API
+    push('/'); // Перенаправляете пользователя на страницу логина
+    window.location.reload();
+  } catch (error) {
+    console.error('Logout failed:', error); // Обработка ошибок
+  }
+};
+
 </script>
