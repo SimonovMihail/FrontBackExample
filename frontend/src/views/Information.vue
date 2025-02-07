@@ -36,8 +36,8 @@
 
     <!--Этапы-------------------------------------------------------------------------------------------------------------------->
     <el-row  justify="center" class="stages-bg">
-    
-    
+
+
 
       <el-col  :span="24" class="img-col" id="stages">
         <h1>Этапы</h1>
@@ -91,8 +91,11 @@
 <script lang="ts" setup>
   import { ref } from 'vue'
   import { ElScrollbar } from 'element-plus'
-  import Header from "@/layouts/Header/Header.vue";
-  import Footer from "@/layouts/Footer/Footer.vue";
+  import Header from "../layouts/Header-Footer/Header.vue";
+  import Footer from "../layouts/Header-Footer/Footer.vue";
+
+  /* PrimaryLayout пока неприминим к информации, страница ломается */
+
   import {useRouter} from "vue-router";
   const router = useRouter();
   const value = ref(0)

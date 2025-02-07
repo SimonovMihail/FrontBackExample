@@ -1,66 +1,51 @@
 <template>
-  <el-scrollbar ref="scrollbarRef" height="100vh" always @scroll="scroll">
-    <div class="wrapper-for-correct-viewport">
-      <Header/>
-      <div class="common-layout">
-        <el-container>
-          <el-aside width="20%">
-            
-          </el-aside>
+  <PrimaryLayout>
+    <div class="common-layout">
+      <el-container>
+        <el-aside width="20%">
 
-          <el-main>
-            <div class="stages-bg">
-              <el-avatar :size="100"
-                         src="https://avatars.mds.yandex.net/i?id=a58aa42c311bff2d24a063699f0a546bfc2db3996a074653-12471101-images-thumbs&n=13"
-              />
-              <el-divider border-style="double" />
-              <h1>ФИО</h1>
-              <el-divider border-style="double" />
-              <h1>Учебное заведение</h1>
-              <el-divider border-style="double" />
-              <h1>номер телефона</h1>
-              <el-divider border-style="double" />
-              <h1>Почта</h1>
-              <el-divider border-style="double" />
-              <div>
-                <el-button type="primary" plain round @click="Move_To_Userdata_Edit">Редактировать профиль</el-button> <!-- Переход на страницу редактирования -->
-              </div>
+        </el-aside>
+
+        <el-main>
+          <div class="stages-bg">
+            <el-avatar :size="100"
+                       src="https://avatars.mds.yandex.net/i?id=a58aa42c311bff2d24a063699f0a546bfc2db3996a074653-12471101-images-thumbs&n=13"
+            />
+            <el-divider border-style="double" />
+            <h1>ФИО</h1>
+            <el-divider border-style="double" />
+            <h1>Учебное заведение</h1>
+            <el-divider border-style="double" />
+            <h1>номер телефона</h1>
+            <el-divider border-style="double" />
+            <h1>Почта</h1>
+            <el-divider border-style="double" />
+            <div>
+              <el-button type="primary" plain round @click="Move_To_Userdata_Edit">Редактировать профиль</el-button> <!-- Переход на страницу редактирования -->
             </div>
+          </div>
 
-            <div class="button_use">
-              <el-button type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
-            </div>
-          </el-main>
+          <div class="button_use">
+            <el-button type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
+          </div>
+        </el-main>
 
 
-          <el-aside width="20%">
-          
-          </el-aside>
+        <el-aside width="20%">
 
-        </el-container>
-      </div>
-      <Footer/>
+        </el-aside>
+
+      </el-container>
     </div>
-  </el-scrollbar>
+  </PrimaryLayout>
 </template>
 
 
 <script lang="ts" setup>
-  import Header from "@/layouts/Header/Header.vue";
-  import Footer from "@/layouts/Footer/Footer.vue";
-  import { ref } from 'vue'
-  import { ElScrollbar } from 'element-plus'
-  
-  import { Calendar } from '@element-plus/icons-vue'
-    import { useRouter } from 'vue-router';
+  import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
+  import { useRouter } from 'vue-router';
 
   const router = useRouter();
-
-  const valueS = ref(0)
-
-  const scroll = ({ scrollTop }) => {
-    valueS.value = scrollTop
-  }
 
   function Move_To_Userdata_Edit() {
     router.push({

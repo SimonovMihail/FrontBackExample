@@ -1,99 +1,94 @@
 <template>
-  <el-scrollbar ref="scrollbarRef" height="100vh" always @scroll="scroll">
-    <div class="wrapper-for-correct-viewport">
-      <Header/>
-      <div class="wrapper">
-        <div class="wrapper__main-container">
-          <h1 class="main-container-name">Страница жюри</h1>
-            <div class="finished-projects-container">
-              <el-form
-                  :model="finishedProjectsGradesFormModel"
-                  ref="finishedProjectsGradesFormRef"
-                  class="finished-projects-grades-form"
-                  :rules="rules_grades"
-                  @submit.prevent="saveFinishedProjectsGrades"
-              >
-                <el-scrollbar class="scrollbar-content" height="400px">
-                  <p class="finished-project-item finished-project-item__1"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item"  prop="grade1">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade1"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__2"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade2">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade2"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__3"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade3">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade3"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__4"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade4">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade4"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__5"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade5">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade5"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__6"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade6">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade6"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__7"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade7">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade7"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__8"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade8">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade8"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__9"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade9">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade9"></el-input>
-                    </el-form-item>
-                  </p>
-                  <p class="finished-project-item finished-project-item__10"><span>"Большая команда"</span>
-                    <el-button class="download-finished-project-button">Скачать работу</el-button>
-                    <el-form-item class="grade-item" prop="grade10">
-                      <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade10"></el-input>
-                    </el-form-item>
-                  </p>
-                </el-scrollbar>
-              </el-form>
-              <div class="button-container-grades">
-                <el-button class="button-confirm-grades" type="primary" @click="saveFinishedProjectsGrades">Сохранить оценки</el-button>
-                <el-button class="button-cancel-grades" type="info" @click="cancelFinishedProjectsGrades">Отменить изменения</el-button>
-              </div>
-            </div>
+  <PrimaryLayout>
+    <div class="wrapper">
+      <div class="wrapper__main-container">
+        <h1 class="main-container-name">Страница жюри</h1>
+        <div class="finished-projects-container">
+          <el-form
+              :model="finishedProjectsGradesFormModel"
+              ref="finishedProjectsGradesFormRef"
+              class="finished-projects-grades-form"
+              :rules="rules_grades"
+              @submit.prevent="saveFinishedProjectsGrades"
+          >
+            <el-scrollbar class="scrollbar-content" height="400px">
+              <p class="finished-project-item finished-project-item__1"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item"  prop="grade1">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade1"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__2"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade2">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade2"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__3"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade3">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade3"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__4"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade4">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade4"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__5"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade5">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade5"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__6"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade6">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade6"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__7"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade7">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade7"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__8"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade8">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade8"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__9"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade9">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade9"></el-input>
+                </el-form-item>
+              </p>
+              <p class="finished-project-item finished-project-item__10"><span>"Большая команда"</span>
+                <el-button class="download-finished-project-button">Скачать работу</el-button>
+                <el-form-item class="grade-item" prop="grade10">
+                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade10"></el-input>
+                </el-form-item>
+              </p>
+            </el-scrollbar>
+          </el-form>
+          <div class="button-container-grades">
+            <el-button class="button-confirm-grades" type="primary" @click="saveFinishedProjectsGrades">Сохранить оценки</el-button>
+            <el-button class="button-cancel-grades" type="info" @click="cancelFinishedProjectsGrades">Отменить изменения</el-button>
           </div>
         </div>
-      <Footer/>
       </div>
-  </el-scrollbar>
+    </div>
+  </PrimaryLayout>
 </template>
 
 
 <script lang="ts" setup>
 import {ElButton, ElForm, ElInput, ElScrollbar, FormInstance, FormRules} from "element-plus";
 import {ref} from "vue";
-import Header from "@/layouts/Header/Header.vue";
-import Footer from "@/layouts/Footer/Footer.vue";
+import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
 
 const finishedProjectsGradesFormModel = ref({
   grade1: '',

@@ -1,198 +1,193 @@
 <template>
-  <el-scrollbar ref="scrollbarRef" height="100vh" always @scroll="scroll">
-    <div class="wrapper-for-correct-viewport">
-      <Header/>
-      <div class="wrapper">
-        <div class="wrapper__main-container">
-          <h1 class="main-container-name">Редактировать заявку</h1>
-          <el-form
-              :model="changeParticipantEntryFormModel"
-              :rules="rules"
-              ref="changeParticipantEntryFormRef"
-              class="changeParticipantEntry-form"
-              label-width="110px"
-              @submit.prevent="submitChangeParticipantEntryForm"
-              label-position="left"
-          >
-            <!-- Сделал табуляцию этой вложенности подальше, т.к. работаю в вебшторме, потом табуляцию уменьшу... -->
-            <!-- Помимо атрибута о ширине лейблов в форме, я так же индивидуально настроил эти ширины у некоторых элементов. -->
+  <PrimaryLayout>
+    <div class="wrapper">
+      <div class="wrapper__main-container">
+        <h1 class="main-container-name">Редактировать заявку</h1>
+        <el-form
+            :model="changeParticipantEntryFormModel"
+            :rules="rules"
+            ref="changeParticipantEntryFormRef"
+            class="changeParticipantEntry-form"
+            label-width="110px"
+            @submit.prevent="submitChangeParticipantEntryForm"
+            label-position="left"
+        >
+          <!-- Сделал табуляцию этой вложенности подальше, т.к. работаю в вебшторме, потом табуляцию уменьшу... -->
+          <!-- Помимо атрибута о ширине лейблов в форме, я так же индивидуально настроил эти ширины у некоторых элементов. -->
 
-            <!-- Стараюсь давать нейминг по БЕМу, но могу где-то забывать про него. Нейминг контейнеров с контентом должен быть вида
-                 xx-xx-...-info-container -->
-            <div class="changeParticipantEntry-form__container team-lead-info-container">
-              <h3 class="info-container-name">Лидер команды</h3>
-              <el-form-item label="ФИО:" label-width="90px" prop="team_lead_fio">
-                <el-input class="input-team_lead_fio" v-model="changeParticipantEntryFormModel.team_lead_fio" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Email:" label-width="90px" prop="team_lead_email">
-                <el-input class="input-team_lead_email" v-model="changeParticipantEntryFormModel.team_lead_email" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Телефон:" label-width="90px" prop="team_lead_number">
-                <el-input class="input-team_lead_number" v-model="changeParticipantEntryFormModel.team_lead_number" clearable>
-                  <template #prepend>+7</template>
-                </el-input>
-              </el-form-item>
-              <el-form-item label="ВУЗ:" label-width="90px" prop="team_lead_vuz">
-                <el-input class="input-team_lead_vuz" v-model="changeParticipantEntryFormModel.team_lead_vuz" clearable></el-input>
-              </el-form-item>
+          <!-- Стараюсь давать нейминг по БЕМу, но могу где-то забывать про него. Нейминг контейнеров с контентом должен быть вида
+               xx-xx-...-info-container -->
+          <div class="changeParticipantEntry-form__container team-lead-info-container">
+            <h3 class="info-container-name">Лидер команды</h3>
+            <el-form-item label="ФИО:" label-width="90px" prop="team_lead_fio">
+              <el-input class="input-team_lead_fio" v-model="changeParticipantEntryFormModel.team_lead_fio" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Email:" label-width="90px" prop="team_lead_email">
+              <el-input class="input-team_lead_email" v-model="changeParticipantEntryFormModel.team_lead_email" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Телефон:" label-width="90px" prop="team_lead_number">
+              <el-input class="input-team_lead_number" v-model="changeParticipantEntryFormModel.team_lead_number" clearable>
+                <template #prepend>+7</template>
+              </el-input>
+            </el-form-item>
+            <el-form-item label="ВУЗ:" label-width="90px" prop="team_lead_vuz">
+              <el-input class="input-team_lead_vuz" v-model="changeParticipantEntryFormModel.team_lead_vuz" clearable></el-input>
+            </el-form-item>
+          </div>
+
+          <div class="changeParticipantEntry-form__container team-lead-vuz-info-container">
+            <h3 class="info-container-name">Направление/специальность и курс лидера</h3>
+            <el-form-item label="Направление:" prop="team_lead_vuz_direction"> <!-- В контексте ВУЗа "направление" переводится как "program", но похуй -->
+              <el-input class="input-team_lead_vuz_direction" v-model="changeParticipantEntryFormModel.team_lead_vuz_direction" clearable></el-input> <!-- "direction" проще воспринимается -->
+            </el-form-item>
+            <el-form-item label="Код:" prop="team_lead_vuz_code">
+              <el-input class="input-code" v-model="changeParticipantEntryFormModel.team_lead_vuz_code" clearable></el-input>
+            </el-form-item>
+
+            <el-form-item class="team_lead_value_courses" prop="team_lead_value_courses"> <!-- Это выпадающее меню -->
+              <el-select
+                  v-model="changeParticipantEntryFormModel.team_lead_value_courses"
+                  placeholder="Выбор курса"
+                  class="team_lead_value_courses__select"
+                  size="large"
+                  style="width: 240px"
+              > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
+                <el-option
+                    v-for="team_lead_course in team_lead_courses"
+                    :key="team_lead_course.team_lead_value_courses"
+                    :label="team_lead_course.team_lead_value_courses"
+                    :value="team_lead_course.team_lead_value_courses"
+                />
+              </el-select>
+            </el-form-item>
+            <!-- Я не знаю, как настроить отправку файлов... -->
+            <!-- Тему с отправкой файлов потом обсудим со старшаками и бекендом -->
+            <el-form-item class="upload-files-button team_lead_study_certificate" label="Справка об обучении:" label-width="180px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+            <el-form-item class="upload-files-button team_lead_job_certificate" label="Справка о месте работы:" label-width="180px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+            <el-form-item class="upload-files-button team_lead_consent" label="Согласие:" label-width="180px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+            <div class="link-container team-lead-vuz-info-container__link-container">
+              <el-link type="primary">Скачать согласие для заполнения</el-link>
             </div>
+          </div>
 
-            <div class="changeParticipantEntry-form__container team-lead-vuz-info-container">
-              <h3 class="info-container-name">Направление/специальность и курс лидера</h3>
-              <el-form-item label="Направление:" prop="team_lead_vuz_direction"> <!-- В контексте ВУЗа "направление" переводится как "program", но похуй -->
-                <el-input class="input-team_lead_vuz_direction" v-model="changeParticipantEntryFormModel.team_lead_vuz_direction" clearable></el-input> <!-- "direction" проще воспринимается -->
-              </el-form-item>
-              <el-form-item label="Код:" prop="team_lead_vuz_code">
-                <el-input class="input-code" v-model="changeParticipantEntryFormModel.team_lead_vuz_code" clearable></el-input>
-              </el-form-item>
+          <div class="changeParticipantEntry-form__container mentor-info-container">
+            <h3 class="info-container-name">Наставник</h3>
+            <el-form-item label="ФИО:" label-width="90px" prop="mentor_fio">
+              <el-input class="input-mentor_fio" v-model="changeParticipantEntryFormModel.mentor_fio" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Email:" label-width="90px" prop="mentor_email">
+              <el-input class="input-mentor_email" v-model="changeParticipantEntryFormModel.mentor_email" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Телефон:" label-width="90px" prop="mentor_number">
+              <el-input class="input-mentor_number" v-model="changeParticipantEntryFormModel.mentor_number" clearable>
+                <template #prepend>+7</template>
+              </el-input>
+            </el-form-item>
+            <!-- По наставникам тоже непонятно. По наброскам в тетради не упомянуто, что наставников будет несколько и их
+                 нужно будет добавлять. Но слово "Наставники" я оставлю, потому что так написано. -->
+          </div>
 
-              <el-form-item class="team_lead_value_courses" prop="team_lead_value_courses"> <!-- Это выпадающее меню -->
-                <el-select
-                    v-model="changeParticipantEntryFormModel.team_lead_value_courses"
-                    placeholder="Выбор курса"
-                    class="team_lead_value_courses__select"
-                    size="large"
-                    style="width: 240px"
-                > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
-                  <el-option
-                      v-for="team_lead_course in team_lead_courses"
-                      :key="team_lead_course.team_lead_value_courses"
-                      :label="team_lead_course.team_lead_value_courses"
-                      :value="team_lead_course.team_lead_value_courses"
-                  />
-                </el-select>
-              </el-form-item>
-              <!-- Я не знаю, как настроить отправку файлов... -->
-              <!-- Тему с отправкой файлов потом обсудим со старшаками и бекендом -->
-              <el-form-item class="upload-files-button team_lead_study_certificate" label="Справка об обучении:" label-width="180px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-              <el-form-item class="upload-files-button team_lead_job_certificate" label="Справка о месте работы:" label-width="180px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-              <el-form-item class="upload-files-button team_lead_consent" label="Согласие:" label-width="180px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-              <div class="link-container team-lead-vuz-info-container__link-container">
-                <el-link type="primary">Скачать согласие для заполнения</el-link>
-              </div>
+          <div class="changeParticipantEntry-form__container team-info-container">
+            <h3 class="info-container-name">Команда</h3>
+            <el-form-item label="Название:" label-width="90px" prop="team_name">
+              <el-input class="input-team_name" v-model="changeParticipantEntryFormModel.team_name" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Описание:" label-width="90px" prop="team_description">
+              <el-input class="input-team_description" v-model="changeParticipantEntryFormModel.team_description" clearable></el-input>
+            </el-form-item>
+            <el-form-item class="team_logo" label="Лого:" label-width="90px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+          </div>
+
+          <div class="changeParticipantEntry-form__container team-member-info-container">
+            <h3 class="info-container-name">Участник 1</h3>
+            <el-form-item label="ФИО:" label-width="90px" prop="team_member_fio">
+              <el-input class="input-team_member_fio" v-model="changeParticipantEntryFormModel.team_member_fio" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Email:" label-width="90px" prop="team_member_email">
+              <el-input class="input-team_member_email" v-model="changeParticipantEntryFormModel.team_member_email" clearable></el-input>
+            </el-form-item>
+            <el-form-item label="Телефон:" label-width="90px" prop="team_member_number">
+              <el-input class="input-team_member_number" v-model="changeParticipantEntryFormModel.team_member_number" clearable>
+                <template #prepend>+7</template>
+              </el-input>
+            </el-form-item>
+            <el-form-item class="team_member_add">
+              <el-button class="team_member_add__button" type="info" @click="addMember">+ Добавить участника</el-button> <!-- Пока пустышка -->
+            </el-form-item>
+          </div>
+
+          <div class="changeParticipantEntry-form__container team-member-vuz-info-container">
+            <h3 class="info-container-name">Направление/специальность и курс участника</h3>
+            <el-form-item label="Направление:" prop="team_member_vuz_direction"> <!-- В контексте ВУЗа "направление" переводится как "program", но похуй -->
+              <el-input class="input-team_member_vuz_direction" v-model="changeParticipantEntryFormModel.team_member_vuz_direction" clearable></el-input> <!-- "direction" проще воспринимается -->
+            </el-form-item>
+            <el-form-item label="Код:" prop="team_member_vuz_code">
+              <el-input class="input-code" v-model="changeParticipantEntryFormModel.team_member_vuz_code" clearable></el-input>
+            </el-form-item>
+
+            <el-form-item class="team_member_value_courses" prop="team_member_value_courses"> <!-- Это выпадающее меню -->
+              <el-select
+                  v-model="changeParticipantEntryFormModel.team_member_value_courses"
+                  placeholder="Выбор курса"
+                  size="large"
+                  class="team_member_value_courses__select"
+                  style="width: 240px"
+              > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
+                <el-option
+                    v-for="team_member_course in team_member_courses"
+                    :key="team_member_course.team_member_value_courses"
+                    :label="team_member_course.team_member_value_courses"
+                    :value="team_member_course.team_member_value_courses"
+                />
+              </el-select>
+            </el-form-item>
+            <el-form-item class="upload-files-button team_member_study_certificate" label="Справка об обучении:" label-width="180px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+            <el-form-item class="upload-files-button team_member_job_certificate" label="Справка о месте работы:" label-width="180px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+            <el-form-item class="upload-files-button team_member_consent" label="Согласие:" label-width="180px" label-position="left">
+              <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
+                <el-button type="primary">Прикрепить файл</el-button>
+              </el-upload>
+            </el-form-item>
+            <div class="link-container team-member-vuz-info-container__link-container">
+              <el-link type="primary">Скачать согласие для заполнения</el-link>
             </div>
-
-            <div class="changeParticipantEntry-form__container mentor-info-container">
-              <h3 class="info-container-name">Наставник</h3>
-              <el-form-item label="ФИО:" label-width="90px" prop="mentor_fio">
-                <el-input class="input-mentor_fio" v-model="changeParticipantEntryFormModel.mentor_fio" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Email:" label-width="90px" prop="mentor_email">
-                <el-input class="input-mentor_email" v-model="changeParticipantEntryFormModel.mentor_email" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Телефон:" label-width="90px" prop="mentor_number">
-                <el-input class="input-mentor_number" v-model="changeParticipantEntryFormModel.mentor_number" clearable>
-                  <template #prepend>+7</template>
-                </el-input>
-              </el-form-item>
-              <!-- По наставникам тоже непонятно. По наброскам в тетради не упомянуто, что наставников будет несколько и их
-                   нужно будет добавлять. Но слово "Наставники" я оставлю, потому что так написано. -->
-            </div>
-
-            <div class="changeParticipantEntry-form__container team-info-container">
-              <h3 class="info-container-name">Команда</h3>
-              <el-form-item label="Название:" label-width="90px" prop="team_name">
-                <el-input class="input-team_name" v-model="changeParticipantEntryFormModel.team_name" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Описание:" label-width="90px" prop="team_description">
-                <el-input class="input-team_description" v-model="changeParticipantEntryFormModel.team_description" clearable></el-input>
-              </el-form-item>
-              <el-form-item class="team_logo" label="Лого:" label-width="90px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-            </div>
-
-            <div class="changeParticipantEntry-form__container team-member-info-container">
-              <h3 class="info-container-name">Участник 1</h3>
-              <el-form-item label="ФИО:" label-width="90px" prop="team_member_fio">
-                <el-input class="input-team_member_fio" v-model="changeParticipantEntryFormModel.team_member_fio" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Email:" label-width="90px" prop="team_member_email">
-                <el-input class="input-team_member_email" v-model="changeParticipantEntryFormModel.team_member_email" clearable></el-input>
-              </el-form-item>
-              <el-form-item label="Телефон:" label-width="90px" prop="team_member_number">
-                <el-input class="input-team_member_number" v-model="changeParticipantEntryFormModel.team_member_number" clearable>
-                  <template #prepend>+7</template>
-                </el-input>
-              </el-form-item>
-              <el-form-item class="team_member_add">
-                <el-button class="team_member_add__button" type="info" @click="addMember">+ Добавить участника</el-button> <!-- Пока пустышка -->
-              </el-form-item>
-            </div>
-
-            <div class="changeParticipantEntry-form__container team-member-vuz-info-container">
-              <h3 class="info-container-name">Направление/специальность и курс участника</h3>
-              <el-form-item label="Направление:" prop="team_member_vuz_direction"> <!-- В контексте ВУЗа "направление" переводится как "program", но похуй -->
-                <el-input class="input-team_member_vuz_direction" v-model="changeParticipantEntryFormModel.team_member_vuz_direction" clearable></el-input> <!-- "direction" проще воспринимается -->
-              </el-form-item>
-              <el-form-item label="Код:" prop="team_member_vuz_code">
-                <el-input class="input-code" v-model="changeParticipantEntryFormModel.team_member_vuz_code" clearable></el-input>
-              </el-form-item>
-
-              <el-form-item class="team_member_value_courses" prop="team_member_value_courses"> <!-- Это выпадающее меню -->
-                <el-select
-                    v-model="changeParticipantEntryFormModel.team_member_value_courses"
-                    placeholder="Выбор курса"
-                    size="large"
-                    class="team_member_value_courses__select"
-                    style="width: 240px"
-                > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
-                  <el-option
-                      v-for="team_member_course in team_member_courses"
-                      :key="team_member_course.team_member_value_courses"
-                      :label="team_member_course.team_member_value_courses"
-                      :value="team_member_course.team_member_value_courses"
-                  />
-                </el-select>
-              </el-form-item>
-              <el-form-item class="upload-files-button team_member_study_certificate" label="Справка об обучении:" label-width="180px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-              <el-form-item class="upload-files-button team_member_job_certificate" label="Справка о месте работы:" label-width="180px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-              <el-form-item class="upload-files-button team_member_consent" label="Согласие:" label-width="180px" label-position="left">
-                <el-upload v-model:file-list="fileList" :before-upload="handleBeforeUpload">
-                  <el-button type="primary">Прикрепить файл</el-button>
-                </el-upload>
-              </el-form-item>
-              <div class="link-container team-member-vuz-info-container__link-container">
-                <el-link type="primary">Скачать согласие для заполнения</el-link>
-              </div>
-            </div>
-          </el-form>
-          <el-button class="button-confirm" type="primary" @click="submitChangeParticipantEntryForm">Сохранить изменения</el-button>
-          <el-button class="button-cancel" type="info" @click="cancelChangeParticipantEntryForm">Отменить изменения</el-button>
-        </div>
+          </div>
+        </el-form>
+        <el-button class="button-confirm" type="primary" @click="submitChangeParticipantEntryForm">Сохранить изменения</el-button>
+        <el-button class="button-cancel" type="info" @click="cancelChangeParticipantEntryForm">Отменить изменения</el-button>
       </div>
-      <Footer/>
     </div>
-  </el-scrollbar>
+  </PrimaryLayout>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { ElForm, ElInput, ElButton, ElScrollbar, FormInstance, FormRules } from 'element-plus';
-import Header from '../layouts/Header/Header.vue';
-import Footer from '../layouts/Footer/Footer.vue';
+import { ElForm, ElInput, ElButton, FormInstance, FormRules } from 'element-plus';
+import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
 
 const changeParticipantEntryFormModel = ref({ // Здесь сохранаются данные формы
   team_lead_fio: '',
@@ -361,23 +356,10 @@ const handleBeforeUpload = (file: File) => {
   }
   return isLt2M; // если true, файл загружается; если false, загрузка отменяется
 };
-
-const scroll = ({ scrollTop }) => {
-  const value = ref(0);
-  value.value = scrollTop;
-};
 </script>
 
 
 <style scoped>
-.wrapper-for-correct-viewport { /* Чтобы пофиксить ту хуйню с отрыванием футера */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  gap: 10px;
-}
-
 .wrapper {
   display: flex;
   justify-content: center;

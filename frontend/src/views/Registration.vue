@@ -1,50 +1,43 @@
 <template>
-  <el-scrollbar ref="scrollbarRef" height="100vh" always @scroll="scroll">
-    <div class="wrapper-for-correct-viewport">
-      <Header/>
-      <div class="wrapper">
-        <div class="wrapper__main-container">
-          <h1 class="main-container-name">Регистрация</h1>
-          <el-form
-              :model="registrationFormModel"
-              :rules="rules"
-              ref="registrationFormRef"
-              class="registration-form"
-              label-width="160px"
-              label-position="left"
-              @submit.prevent="submitRegistrationForm"
-          >
-            <el-form-item label="Email:" prop="email">
-              <el-input class="input-email" v-model="registrationFormModel.email"></el-input>
-            </el-form-item>
-            <el-form-item label="Пароль:" prop="password">
-              <el-input type="password" class="input-password" v-model="registrationFormModel.password"></el-input>
-            </el-form-item>
-            <el-form-item label="Подтвердите пароль:" prop="confirm_password">
-              <el-input type="password" class="input-confirm-password" v-model="registrationFormModel.confirm_password"></el-input>
-            </el-form-item>
-            <div class="button-container">
-              <el-button class="button-confirm" type="primary" @click="submitRegistrationForm">Зарегистрироваться</el-button>
-              <el-button class="button-move-to-login" type="info" @click="Move_To_Login">Войти в аккаунт</el-button>
-            </div>
-          </el-form>
-        </div>
+  <PrimaryLayout>
+    <div class="wrapper">
+      <div class="wrapper__main-container">
+        <h1 class="main-container-name">Регистрация</h1>
+        <el-form
+            :model="registrationFormModel"
+            :rules="rules"
+            ref="registrationFormRef"
+            class="registration-form"
+            label-width="160px"
+            label-position="left"
+            @submit.prevent="submitRegistrationForm"
+        >
+          <el-form-item label="Email:" prop="email">
+            <el-input class="input-email" v-model="registrationFormModel.email"></el-input>
+          </el-form-item>
+          <el-form-item label="Пароль:" prop="password">
+            <el-input type="password" class="input-password" v-model="registrationFormModel.password"></el-input>
+          </el-form-item>
+          <el-form-item label="Подтвердите пароль:" prop="confirm_password">
+            <el-input type="password" class="input-confirm-password" v-model="registrationFormModel.confirm_password"></el-input>
+          </el-form-item>
+          <div class="button-container">
+            <el-button class="button-confirm" type="primary" @click="submitRegistrationForm">Зарегистрироваться</el-button>
+            <el-button class="button-move-to-login" type="info" @click="Move_To_Login">Войти в аккаунт</el-button>
+          </div>
+        </el-form>
       </div>
-      <Footer/>
     </div>
-  </el-scrollbar>
+  </PrimaryLayout>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { ElForm, ElInput, ElButton, ElScrollbar, FormInstance, FormRules } from 'element-plus';
-import Header from '../layouts/Header/Header.vue';
-import Footer from '../layouts/Footer/Footer.vue';
+import { ElForm, ElInput, ElButton, FormInstance, FormRules } from 'element-plus';
+import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
-
 
 const registrationFormModel = ref({
   email: '',

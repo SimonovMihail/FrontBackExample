@@ -8,7 +8,7 @@
               <el-button v-if="isLogin() && isClient()" type="primary" plain round @click="Move_To_ChangeParticipantEntry()">Редактировать заявку</el-button>
               <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_ParticipantEntry()">Подать заявку</el-button>
               <el-button v-if="!isLogin()" type="primary" plain round @click="Move_To_Login()">Вход</el-button>
-              <el-button v-if="isAdmin() || isJudge()" type="primary" plain round @click="exitAccount()">Выход</el-button>
+              <el-button v-if="isAdmin() || isJudge()" type="danger" plain round @click="exitAccount()">Выход</el-button>
               <div v-show="isLogin() && (isTeamMember() || isClient())" class="lk-button">
                 <el-button type="primary" plain circle class="lk-button__avatar">
                   <el-avatar :size="25"
