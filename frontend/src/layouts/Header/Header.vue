@@ -17,7 +17,7 @@
                 </el-button>
                 <ul class="lk-button__avatar-dropdown-menu">
                   <li class="avatar-dropdown-menu__item1" @click="Move_To_Lk()">Личный кабинет</li>
-                  <li class="avatar-dropdown-menu__item2">Выйти</li> <!-- Тут должна быть функция выхода из учётной записи -->
+                  <li class="avatar-dropdown-menu__item2" @click="exitAccount()">Выйти</li> <!-- Тут должна быть функция выхода из учётной записи -->
                 </ul>
               </div>
             </div>
@@ -89,6 +89,16 @@ onMounted(async () => {
   const currentUser = await api.users.getCurrentUser();
   user.value = currentUser;
 });
+
+const exitAccount = async () => {
+  try {
+    await api.auth.logout();
+    router.push({ path: '/' });
+    window.location.reload();
+  } catch (error) {
+    console.error('Logout failed:', error);
+  }
+};
 
 function isLogin(): boolean {
   return !(user.value === null);
