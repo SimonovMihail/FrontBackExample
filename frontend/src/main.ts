@@ -37,6 +37,8 @@ import Judge from "@/views/Judge.vue";
 import LkUserdataEdit from "@/views/LkUserdataEdit.vue";
 import {UserRoleEnum} from "@/types/users.types.ts";
 import api from "@/api";
+import ViewParticipantEntry from "@/views/AdminAdditional/ViewParticipantEntry.vue";
+import ViewUserInformation from "@/views/AdminAdditional/ViewUserInformation.vue";
 
 const routes = [
     {
@@ -71,6 +73,24 @@ const routes = [
             title: 'Редактирование заявки',
             requiresAuth: true,
             roles: [UserRoleEnum.CLIENT],
+        },
+    },
+    {
+        path: '/viewParticipantEntry',
+        component: ViewParticipantEntry,
+        meta: {
+            title: 'Просмотр заявки',
+            requiresAuth: true,
+            roles: [UserRoleEnum.ADMIN],
+        },
+    },
+    {
+        path: '/viewUserInformation',
+        component: ViewUserInformation,
+        meta: {
+            title: 'Просмотр информации о пользователе',
+            requiresAuth: true,
+            roles: [UserRoleEnum.ADMIN],
         },
     },
     {
