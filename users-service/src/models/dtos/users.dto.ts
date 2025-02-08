@@ -30,6 +30,13 @@ export class UserDTO {
   public registeredAt: Date | string;
 
   public roles: UserRoleDTO[];
+
+    public fullName: string;
+    public number: string;
+    public vuz: string;
+    public vuz_direction: string;
+    public code_speciality: string;
+    public course: string;
 }
 
 /**
@@ -52,6 +59,13 @@ export class CreateUserRequestDTO {
   public password: string;
 
   public roles: UserRoleDTO[];
+
+    public fullName: string;
+    public number: string;
+    public vuz: string;
+    public vuz_direction: string;
+    public code_speciality: string;
+    public course: string;
 }
 
 /**

@@ -29,7 +29,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from "@/views/Login.vue";
 import ChangeParticipantEntry from "@/views/ChangeParticipantEntry.vue";
 import ParticipantEntry from "@/views/ParticipantEntry.vue";
-import Registration from "@/views/Registration.vue";
+import Registration from "@/components/forms/RegisterForm/RegisterForm.vue"
 import Admin from "@/views/Admin.vue";
 import Information from "@/views/Information.vue";
 import Lk from "@/views/Lk.vue";

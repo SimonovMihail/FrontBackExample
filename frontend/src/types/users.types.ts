@@ -16,7 +16,12 @@ export interface UserDTO {
   email: string;
   fullName: string;
   registeredAt: Date | string;
-  roles: UserRoleDTO[];
+    roles: UserRoleDTO[];
+    number: string;
+    vuz: string;
+    vuz_direction: string;
+    code_speciality: string;
+    course: string;
 }
 
 /**

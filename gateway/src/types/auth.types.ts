@@ -7,10 +7,28 @@ import type { JWTUser } from "@Types/users.types";
  */
 export class AuthRequestDTO {
   @IsEmail(undefined, { message: 'Параметр email должен быть почтой' })
-  public email: string;
+    public email: string;
+
+    @IsString({ message: 'ФИО должен быть строкой' })
+    public fullName: string;
 
   @IsString({ message: 'Параметр password должен быть строкой' })
-  public password: string;
+    public password: string;
+
+    @IsString({ message: 'Номер должен быть строкой' })
+    public number: string;
+
+    @IsString({ message: 'вуз должен быть строкой' })
+    public vuz: string;
+
+    @IsString({ message: 'Направление вуза должен быть строкой' })
+    public vuz_direction: string;
+
+    @IsString({ message: 'Код специальности должен быть строкой' })
+    public code_speciality: string;
+
+    @IsString({ message: 'Курс должен быть строкой' })
+    public course: string;
 }
 
 /**
