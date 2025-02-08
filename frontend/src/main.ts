@@ -35,27 +35,63 @@ import Information from "@/views/Information.vue";
 import Lk from "@/views/Lk.vue";
 import Judge from "@/views/Judge.vue";
 import LkUserdataEdit from "@/views/LkUserdataEdit.vue";
+import {UserRoleEnum} from "@/types/users.types.ts";
+import api from "@/api";
+import ViewParticipantEntry from "@/views/AdminAdditional/ViewParticipantEntry.vue";
+import ViewUserInformation from "@/views/AdminAdditional/ViewUserInformation.vue";
 
 const routes = [
     {
         path: '/lk',
         component: Lk,
-        meta: { title: 'Личный кабинет' },
+        meta: {
+            title: 'Личный кабинет',
+            requiresAuth: true,
+        },
     },
     {
         path: '/lk_userdata_edit',
         component: LkUserdataEdit,
-        meta: { title: 'Редактировать профиль' },
+        meta: {
+            title: 'Редактировать профиль',
+            requiresAuth: true,
+        },
     },
     {
         path: '/participantEntry',
         component: ParticipantEntry,
-        meta: { title: 'Подача заявки' },
+        meta: {
+            title: 'Подача заявки',
+            requiresAuth: true,
+            roles: [UserRoleEnum.CLIENT],
+        },
     },
     {
         path: '/changeParticipantEntry',
         component: ChangeParticipantEntry,
-        meta: { title: 'Редактирование заявки' },
+        meta: {
+            title: 'Редактирование заявки',
+            requiresAuth: true,
+            roles: [UserRoleEnum.CLIENT],
+        },
+    },
+    {
+        path: '/viewParticipantEntry',
+        component: ViewParticipantEntry,
+        meta: {
+            title: 'Просмотр заявки',
+            requiresAuth: true,
+            roles: [UserRoleEnum.ADMIN],
+        },
+    },
+    {
+        path: '/viewUserInformation',
+        component: ViewUserInformation,
+        meta: {
+            title: 'Просмотр информации о пользователе',
+            requiresAuth: true,
+            roles: [UserRoleEnum.ADMIN],
+        },
     },
     {
         path: '/login',
@@ -70,12 +106,20 @@ const routes = [
     {
         path: '/admin',
         component: Admin,
-        meta: { title: 'Страница Администратора' },
+        meta: {
+            title: 'Страница Администратора',
+            requiresAuth: true,
+            roles: [UserRoleEnum.ADMIN],
+        },
     },
     {
         path: '/judge',
         component: Judge,
-        meta: { title: 'Страница жюри' },
+        meta: {
+            title: 'Страница жюри',
+            requiresAuth: true,
+            roles: [UserRoleEnum.JUDGE],
+        },
     },
     {
         path: '/',
@@ -96,6 +140,31 @@ router.afterEach((to, from) => {
         document.title = nearestWithTitle.meta.title as string;
     }
 });
+
+router.beforeEach(async (to, from, next) => {
+    // Проверяем, требует ли маршрут авторизации
+    if (to.meta.requiresAuth) {
+        const currentUser = await api.users
+            .getCurrentUser()
+            .catch(() => null)
+
+        if (!currentUser) {
+            return next('/login')
+        }
+
+        // Проверяем, есть ли у пользователя нужная роль
+        const userRole = currentUser.roles.map(({ name }) => name)
+        const isMatchRoles = to.meta.roles?.some((role) => userRole.includes(role))
+        if (!to.meta.roles?.length || isMatchRoles) {
+            return next()
+        } else {
+            next(from.fullPath)
+        }
+    } else {
+        // Если авторизация не требуется
+        next()
+    }
+})
 
 // ДЛЯ ИКОНОК
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
