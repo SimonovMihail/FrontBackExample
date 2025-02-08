@@ -263,7 +263,7 @@ const rules: FormRules = {
   team_name: [
     { required: true, message: 'Пожалуйста, введите название команды', trigger: 'blur' },
   ],
-  team_description: [
+  team_description: [ // А надо ли? Может описание опциональным будет?
     { required: true, message: 'Пожалуйста, введите описание команды', trigger: 'blur' },
   ],
   team_member_fio: [
@@ -391,6 +391,14 @@ function isLogin(): boolean {
 
 
 <style scoped>
+.wrapper-for-correct-viewport { /* Чтобы пофиксить ту хуйню с отрыванием футера */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  gap: 10px;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
