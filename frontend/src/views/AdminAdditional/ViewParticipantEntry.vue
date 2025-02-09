@@ -12,11 +12,6 @@
             @submit.prevent="saveParticipantEntryForm"
             label-position="left"
         >
-          <!-- Сделал табуляцию этой вложенности подальше, т.к. работаю в вебшторме, потом табуляцию уменьшу... -->
-          <!-- Помимо атрибута о ширине лейблов в форме, я так же индивидуально настроил эти ширины у некоторых элементов. -->
-
-          <!-- Стараюсь давать нейминг по БЕМу, но могу где-то забывать про него. Нейминг контейнеров с контентом должен быть вида
-               xx-xx-...-info-container -->
           <div class="viewParticipantEntry-form__container team-lead-info-container">
             <h3 class="info-container-name">Лидер команды</h3>
             <el-form-item label="ФИО:" label-width="90px" prop="team_lead_fio">
@@ -40,23 +35,38 @@
             <el-form-item label="Направление:" prop="team_lead_vuz_direction"> <!-- В контексте ВУЗа "направление" переводится как "program", но похуй -->
               <el-input class="input-team_lead_vuz_direction" v-model="viewParticipantEntryFormModel.team_lead_vuz_direction" clearable></el-input> <!-- "direction" проще воспринимается -->
             </el-form-item>
-            <el-form-item label="Код:" prop="team_lead_vuz_code">
+            <el-form-item label="Код направления:" label-width="137px" prop="team_lead_vuz_code">
               <el-input class="input-code" v-model="viewParticipantEntryFormModel.team_lead_vuz_code" clearable></el-input>
             </el-form-item>
-
-            <el-form-item class="team_lead_value_courses" prop="team_lead_value_courses"> <!-- Это выпадающее меню -->
+            <el-form-item class="team_lead_value_courses" prop="team_lead_value_courses">
               <el-select
                   v-model="viewParticipantEntryFormModel.team_lead_value_courses"
                   placeholder="Выбор курса"
                   class="team_lead_value_courses__select"
                   size="large"
                   style="width: 240px"
-              > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
+              >
                 <el-option
                     v-for="team_lead_course in team_lead_courses"
                     :key="team_lead_course.team_lead_value_courses"
                     :label="team_lead_course.team_lead_value_courses"
                     :value="team_lead_course.team_lead_value_courses"
+                />
+              </el-select>
+            </el-form-item>
+            <el-form-item class="user_info_value_degree" prop="user_info_value_degrees">
+              <el-select
+                  v-model="viewParticipantEntryFormModel.user_info_value_degrees"
+                  placeholder="Выбор уровня образования"
+                  class="user_info_value_degrees__select"
+                  size="large"
+                  style="width: 240px"
+              >
+                <el-option
+                    v-for="user_info_degree in user_info_degrees"
+                    :key="user_info_degree.user_info_value_degrees"
+                    :label="user_info_degree.user_info_value_degrees"
+                    :value="user_info_degree.user_info_value_degrees"
                 />
               </el-select>
             </el-form-item>
@@ -157,6 +167,9 @@ const rules: FormRules = {
   team_lead_value_courses: [
     { required: true, message: 'Пожалуйста, выберите курс', trigger: 'change' }
   ],
+  user_info_value_degrees: [
+    { required: true, message: 'Пожалуйста, выберите курс', trigger: 'change' }
+  ],
   team_name: [
     { required: true, message: 'Пожалуйста, введите название команды', trigger: 'blur' },
   ],
@@ -181,6 +194,21 @@ const team_lead_courses = [
   {
     team_lead_value_courses: '4',
     team_lead_label_courses: '4',
+  },
+];
+
+const user_info_degrees = [
+  {
+    user_info_value_degrees: 'Бакалавриат',
+    user_info_label_degrees: 'Бакалавриат',
+  },
+  {
+    user_info_value_degrees: 'Специалитет',
+    user_info_label_degrees: 'Специалитет',
+  },
+  {
+    user_info_value_degrees: 'Магистратура',
+    user_info_label_degrees: 'Магистратура',
   },
 ];
 

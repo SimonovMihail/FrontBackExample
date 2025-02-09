@@ -110,6 +110,7 @@ const userInformationFormModel = ref({
   user_info_vuz_direction: '',
   user_info_vuz_code: '',
   user_info_value_courses: '',
+  user_info_value_degrees: '',
   files: [] as File[],
 });
 
@@ -128,6 +129,7 @@ const saveUserInformationChanges = () => {
           userInformationFormModel.value.user_info_vuz_direction,
           userInformationFormModel.value.user_info_vuz_code,
           userInformationFormModel.value.user_info_value_courses,
+          userInformationFormModel.value.user_info_value_degrees,
       );
     } else {
       console.error('Form error');
@@ -197,6 +199,9 @@ const rules_users: FormRules = {
     { type: 'pattern', pattern: /^\d{2}\.\d{2}\.\d{2}$/, message: 'Формат должен быть вида XX.XX.XX', trigger: ['blur', 'change'] }
   ],
   user_info_value_courses: [
+    { required: true, message: 'Пожалуйста, выберите курс', trigger: 'change' }
+  ],
+  user_info_value_degrees: [
     { required: true, message: 'Пожалуйста, выберите курс', trigger: 'change' }
   ],
 };

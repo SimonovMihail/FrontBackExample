@@ -24,12 +24,18 @@ export enum UsersServiceCmd {
  */
 export class UserDTO {
   public id: string;
-
   public email: string;
-
   public registeredAt: Date | string;
-
   public roles: UserRoleDTO[];
+  public work_grade: string;
+  public phone_number: string;
+  public vuz: string;
+  public vuz_direction: string;
+  public direction_code: string;
+  public course: string;
+  public education_degree: string;
+  public team_name: string;
+  public team_motto: string;
 }
 
 /**
