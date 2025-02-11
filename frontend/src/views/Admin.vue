@@ -8,40 +8,12 @@
             <h3 class="team-list-container__name">Список команд</h3>
             <div>
               <el-scrollbar class="scrollbar-content" height="400px">
-                <p class="team-item team-item__1"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__2"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__3"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__4"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__5"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__6"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__7"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__8"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__9"><span>"Большая команда"</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
-                </p>
-                <p class="team-item team-item__10"><span>"Большая команда"</span>
+                <p v-for="team in teams_list" :key="team.id" class="team-item"><span>{{ team.team_name }}</span>
                   <el-button class="button-open-team-information">Посмотреть информацию</el-button>
                 </p>
               </el-scrollbar>
             </div>
           </div>
-
           <div class="user-list-container">
             <h3 class="user-list-container__name">Список пользователей</h3>
             <div>
@@ -187,6 +159,29 @@
 import {ElButton, ElForm, ElInput, ElScrollbar, FormInstance, FormRules} from "element-plus";
 import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
 import {onMounted, ref} from 'vue';
+import api from '@/api';
+import type { UserDTO } from '@/types/users.types';
+
+const users_list = ref<UserDTO[] | null>(null);
+const valid_users_list = ref<UserDTO[] | null>(null);
+const non_valid_users_list = ref<UserDTO[] | null>(null);
+const teams_list = ref<UserDTO[] | null>(null);
+
+onMounted(async () => {
+  const result = await api.users.useUsersList();
+
+  // Полный список всех пользователей
+  users_list.value = result.map(user => ({ ...user }));
+
+  // Список проверенных пользователей
+  valid_users_list.value = result.filter(user => user.user_valid);
+
+  // Список непроверенных пользователей
+  non_valid_users_list.value = result.filter(user => !user.user_valid);
+
+  // Список команд (entry_sent === true)
+  teams_list.value = result.filter(user => user.entry_sent);
+});
 
 const userRolesFormModel = ref({
   roles1_value: 'Участник',
@@ -206,7 +201,7 @@ const roles1 = [
     roles1_value: 'Админ',
     roles1_label: 'Админ',
   },
-]
+];
 
 const roles2 = [
   {
@@ -221,7 +216,7 @@ const roles2 = [
     roles2_value: 'Админ',
     roles2_label: 'Админ',
   },
-]
+];
 
 const userRolesFormRef = ref<FormInstance>();
 
@@ -288,7 +283,7 @@ const checkGradeCorrection = function(rule: any, value: any, callback: any) {
   else if (number < 1 || number > 50) {
     callback(new Error("Оценка только от 1 до 50"));
   }
-}
+};
 
 const rules_grades: FormRules = {
   grade1: [
@@ -332,6 +327,8 @@ const rules_grades: FormRules = {
     { validator: checkGradeCorrection, trigger: 'blur' },
   ],
 };
+
+
 </script>
 
 
