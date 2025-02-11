@@ -28,6 +28,12 @@ export class UserDTO {
   public education_degree: string;
   public team_name: string;
   public team_motto: string;
+  public entry_sent: boolean;
+  public user_valid: boolean;
+  public team_member_1_id: string;
+  public team_member_2_id: string;
+  public team_member_3_id: string;
+  public team_member_4_id: string;
 }
 
 /**

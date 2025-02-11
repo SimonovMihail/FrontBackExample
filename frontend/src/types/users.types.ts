@@ -26,6 +26,12 @@ export interface UserDTO {
   education_degree: string;
   team_name: string;
   team_motto: string;
+  entry_sent: boolean;
+  user_valid: boolean;
+  team_member_1_id: string;
+  team_member_2_id: string;
+  team_member_3_id: string;
+  team_member_4_id: string;
 }
 
 /**

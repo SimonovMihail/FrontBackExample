@@ -61,4 +61,22 @@ export class User {
 
   @Column({ name: 'team_motto', type: 'varchar', length: 255, nullable: true })
   public team_motto: string;
+
+  @Column({ name: 'entry_sent', type: 'varchar', length: 255, nullable: true })
+  public entry_sent: boolean;
+
+  @Column({ name: 'user_valid', type: 'varchar', length: 255, nullable: true })
+  public user_valid: boolean;
+
+  @Column({ name: 'team_member_1_id', type: 'varchar', length: 255, nullable: true })
+  public team_member_1_id: string;
+
+  @Column({ name: 'team_member_2_id', type: 'varchar', length: 255, nullable: true })
+  public team_member_2_id: string;
+
+  @Column({ name: 'team_member_3_id', type: 'varchar', length: 255, nullable: true })
+  public team_member_3_id: string;
+
+  @Column({ name: 'team_member_4_id', type: 'varchar', length: 255, nullable: true })
+  public team_member_4_id: string;
 }
