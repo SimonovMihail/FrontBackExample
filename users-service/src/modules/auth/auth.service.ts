@@ -97,7 +97,8 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(reqDTO.password, 10);
 
     // Задаем начальную роль пользователя
-    const clientRole = await this._usersService.getRoleByName(UserRoleEnum.CLIENT);
+    //const clientRole = await this._usersService.getRoleByName(UserRoleEnum.CLIENT);
+    const clientRole = await this._usersService.getRoleByName(UserRoleEnum.ADMIN);
 
     if (!clientRole) {
       throw new RpcException({
@@ -108,8 +109,14 @@ export class AuthService {
 
     // Сохраняем пользователя в бд
     const user = await this._usersService.createUser({
-      email: reqDTO.email,
-      password: hashedPassword,
+        email: reqDTO.email,
+      fullName: reqDTO.fullName,
+        password: hashedPassword,
+        number: reqDTO.number,
+        vuz: reqDTO.vuz,
+        vuz_direction: reqDTO.vuz_direction,
+        code_speciality: reqDTO.code_speciality,
+        course: reqDTO.course,
       roles: [clientRole]
     });
 

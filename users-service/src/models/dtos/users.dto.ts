@@ -28,6 +28,7 @@ export class UserDTO {
   public registeredAt: Date | string;
   public roles: UserRoleDTO[];
   public work_grade: string;
+  public fullName: string;
   public number: string;
   public vuz: string;
   public vuz_direction: string;
@@ -60,10 +61,14 @@ export class UserRoleDTO {
  */
 export class CreateUserRequestDTO {
   public email: string;
-
   public password: string;
-
   public roles: UserRoleDTO[];
+  public fullName: string;
+  public number: string;
+  public vuz: string;
+  public vuz_direction: string;
+  public code_speciality: string;
+  public course: string;
 }
 
 /**

@@ -17,6 +17,7 @@ import {
 
 @Injectable()
 export class UsersService {
+  [x: string]: any;
   constructor(
     @InjectRepository(User) private readonly _usersRepository: Repository<User>,
 
@@ -42,7 +43,7 @@ export class UsersService {
   /**
    * Возвращает пользователя из бд по его уникальному email
    */
-  public getUserByEmail(email: string): Promise<User | null> {
+  public getUserByEmail (email: string): Promise<User | null> {
     return this._usersRepository.findOne({ where: { email } });
   }
 
@@ -107,8 +108,7 @@ export class UsersService {
    * Создает пользователя в бд
    */
   public async createUser(reqDTO: CreateUserRequestDTO): Promise<UserDTO> {
-    const { email, password, roles } = reqDTO;
-
+      const { email, fullName, number,  vuz, vuz_direction, code_speciality, course, password, roles } = reqDTO;
     // Проверяем, что присланные роли существуют
     const rolesIds = roles.map((role) => role.id);
     const existedRoles = await this._rolesRepository.find({
@@ -125,8 +125,14 @@ export class UsersService {
 
     // Сохраняем пользователя и связываем его с ролями
     const user = await this._usersRepository.save({
-      email,
-      password,
+        email,
+      fullName,
+        password,
+        number,
+        vuz,
+        vuz_direction,
+        code_speciality,
+        course,
     })
     const user2roles = roles.map((role) =>
       this._user2rolesRepository.create({ user, role })

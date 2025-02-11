@@ -26,7 +26,8 @@ export class AuthAPI {
    * Регистрация
    */
   public async register(registerRequest: AuthRequestDTO): Promise<void> {
-    await this._api.client.post(this.REGISTER_PATH, registerRequest)
+      await this._api.client.post(this.REGISTER_PATH, registerRequest)
+
   }
 
   /**

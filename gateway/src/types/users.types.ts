@@ -10,6 +10,7 @@ import {
   ValidateNested
 } from "class-validator";
 import { Type } from 'class-transformer';
+import { KafkaJSUnsupportedMagicByteInMessageSet } from "@nestjs/microservices/external/kafka.interface";
 
 /**
  * DTO пользователя
@@ -17,6 +18,7 @@ import { Type } from 'class-transformer';
 export class UserDTO {
   public id: string;
   public email: string;
+  public fullName: string;
   public registeredAt: Date | string;
   public roles: UserRoleDTO[];
   public work_grade: string;

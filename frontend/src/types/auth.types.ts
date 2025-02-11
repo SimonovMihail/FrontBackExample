@@ -3,5 +3,11 @@
  */
 export interface AuthRequestDTO {
   email: string;
-  password: string;
+  fullName: string;
+    password: string;
+    number: string;
+    vuz: string;
+    vuz_direction: string;
+    code_speciality: string;
+    course: string;
 }

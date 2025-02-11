@@ -1,0 +1,693 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\pvd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\doc\\doc.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\doc\\doc.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterFormInputs.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\RegisterForm\\RegisterFormInputs.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\types\\users.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\types\\users.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\modules\\auth\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\modules\\auth\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\types\\users.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\types\\users.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\layouts\\Header-Footer\\Header.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\layouts\\Header-Footer\\Header.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\modules\\users\\users.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\modules\\users\\users.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\models\\dtos\\users.dto.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\models\\dtos\\users.dto.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\modules\\users\\users.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\modules\\users\\users.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\views\\Registration.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\views\\Registration.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\node_modules\\typeorm\\repository\\Repository.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\node_modules\\typeorm\\repository\\Repository.d.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\models\\entities\\user-2-roles.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\models\\entities\\user-2-roles.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\models\\entities\\used-token.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\models\\entities\\used-token.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\models\\entities\\role.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\models\\entities\\role.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\models\\entities\\user.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\models\\entities\\user.entity.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\config.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\config.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\modules\\users\\users.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\modules\\users\\users.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\views\\UserEditView.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\views\\UserEditView.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\models\\dtos\\auth.dto.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\models\\dtos\\auth.dto.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\modules\\auth\\auth.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\modules\\auth\\auth.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\types\\auth.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\types\\auth.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\modules\\users\\users.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\modules\\users\\users.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\modules\\auth\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\modules\\auth\\auth.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\modules\\auth\\auth.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\modules\\auth\\auth.controller.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\types\\router.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\types\\router.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\modules\\auth\\auth.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\modules\\auth\\auth.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\gateway\\src\\modules\\users\\users.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gateway\\src\\modules\\users\\users.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\modules\\users\\users.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\modules\\users\\users.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\modules\\type-orm\\type-orm.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\modules\\type-orm\\type-orm.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\utils\\getConfig.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\utils\\getConfig.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\users-service\\src\\store\\index.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:users-service\\src\\store\\index.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginFormInputs.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\LoginForm\\LoginFormInputs.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginForm.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\LoginForm\\LoginForm.types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginForm.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\components\\forms\\LoginForm\\LoginForm.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\views\\RegisterView.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\views\\RegisterView.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\pvd\\frontend\\src\\layouts\\Header-Footer\\PrimaryLayout.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\src\\layouts\\Header-Footer\\PrimaryLayout.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "doc.txt",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\doc\\doc.txt",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\doc\\doc.txt",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\doc\\doc.txt",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\doc\\doc.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-09T23:50:51.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\pvd\\frontend\\index.html",
+              "RelativeDocumentMoniker": "frontend\\index.html",
+              "ToolTip": "D:\\pvd\\frontend\\index.html",
+              "RelativeToolTip": "frontend\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-09T23:49:16.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "D:\\pvd\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "D:\\pvd\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-02-09T18:50:27.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "users.types.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\types\\users.types.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\types\\users.types.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\types\\users.types.ts",
+              "RelativeToolTip": "gateway\\src\\types\\users.types.ts",
+              "ViewState": "AgIAACQAAAAAAAAAAAD4vyoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:27:32.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegisterForm.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue*",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue*",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-08T11:32:33.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Header.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\layouts\\Header-Footer\\Header.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\layouts\\Header-Footer\\Header.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\layouts\\Header-Footer\\Header.vue",
+              "RelativeToolTip": "frontend\\src\\layouts\\Header-Footer\\Header.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-08T11:27:56.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "users.service.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\modules\\users\\users.service.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\modules\\users\\users.service.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\modules\\users\\users.service.ts",
+              "RelativeToolTip": "gateway\\src\\modules\\users\\users.service.ts",
+              "ViewState": "AgIAACcAAAAAAAAAAAAWwEIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:26:02.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "users.types.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\types\\users.types.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\types\\users.types.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\types\\users.types.ts",
+              "RelativeToolTip": "frontend\\src\\types\\users.types.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:03:16.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "auth.service.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\modules\\auth\\auth.service.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\modules\\auth\\auth.service.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\modules\\auth\\auth.service.ts",
+              "RelativeToolTip": "users-service\\src\\modules\\auth\\auth.service.ts",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAWwGQAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:50:24.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterFormInputs.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterFormInputs.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\RegisterForm\\RegisterFormInputs.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterFormInputs.ts",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\RegisterForm\\RegisterFormInputs.ts",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:35:44.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterForm.types.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.types.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.types.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.types.ts",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.types.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:35:24.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "users.dto.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\models\\dtos\\users.dto.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\models\\dtos\\users.dto.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\models\\dtos\\users.dto.ts",
+              "RelativeToolTip": "users-service\\src\\models\\dtos\\users.dto.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:38:52.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "users.service.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\modules\\users\\users.service.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\modules\\users\\users.service.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\modules\\users\\users.service.ts",
+              "RelativeToolTip": "users-service\\src\\modules\\users\\users.service.ts",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAG4AAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:14:00.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Repository.d.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\node_modules\\typeorm\\repository\\Repository.d.ts",
+              "RelativeDocumentMoniker": "users-service\\node_modules\\typeorm\\repository\\Repository.d.ts",
+              "ToolTip": "D:\\pvd\\users-service\\node_modules\\typeorm\\repository\\Repository.d.ts",
+              "RelativeToolTip": "users-service\\node_modules\\typeorm\\repository\\Repository.d.ts",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAWwGkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-09T10:08:10.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Registration.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\views\\Registration.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\views\\Registration.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\views\\Registration.vue",
+              "RelativeToolTip": "frontend\\src\\views\\Registration.vue",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-08T11:28:57.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "user-2-roles.entity.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\models\\entities\\user-2-roles.entity.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\models\\entities\\user-2-roles.entity.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\models\\entities\\user-2-roles.entity.ts",
+              "RelativeToolTip": "users-service\\src\\models\\entities\\user-2-roles.entity.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-09T10:12:16.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "used-token.entity.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\models\\entities\\used-token.entity.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\models\\entities\\used-token.entity.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\models\\entities\\used-token.entity.ts",
+              "RelativeToolTip": "users-service\\src\\models\\entities\\used-token.entity.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-09T10:15:12.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "role.entity.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\models\\entities\\role.entity.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\models\\entities\\role.entity.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\models\\entities\\role.entity.ts",
+              "RelativeToolTip": "users-service\\src\\models\\entities\\role.entity.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-09T10:12:53.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "auth.controller.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\modules\\auth\\auth.controller.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\modules\\auth\\auth.controller.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\modules\\auth\\auth.controller.ts",
+              "RelativeToolTip": "users-service\\src\\modules\\auth\\auth.controller.ts",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwCEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:12:57.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "user.entity.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\models\\entities\\user.entity.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\models\\entities\\user.entity.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\models\\entities\\user.entity.ts",
+              "RelativeToolTip": "users-service\\src\\models\\entities\\user.entity.ts",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:19:08.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "config.yml",
+              "DocumentMoniker": "D:\\pvd\\users-service\\config.yml",
+              "RelativeDocumentMoniker": "users-service\\config.yml",
+              "ToolTip": "D:\\pvd\\users-service\\config.yml",
+              "RelativeToolTip": "users-service\\config.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-02-09T08:04:31.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "users.controller.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\modules\\users\\users.controller.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\modules\\users\\users.controller.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\modules\\users\\users.controller.ts",
+              "RelativeToolTip": "users-service\\src\\modules\\users\\users.controller.ts",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAwDwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:14:13.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UserEditView.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\views\\UserEditView.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\views\\UserEditView.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\views\\UserEditView.vue",
+              "RelativeToolTip": "frontend\\src\\views\\UserEditView.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-09T08:22:26.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "auth.dto.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\models\\dtos\\auth.dto.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\models\\dtos\\auth.dto.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\models\\dtos\\auth.dto.ts",
+              "RelativeToolTip": "users-service\\src\\models\\dtos\\auth.dto.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:41:43.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "main.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\main.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\main.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\main.ts",
+              "RelativeToolTip": "frontend\\src\\main.ts",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAB8AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:25:01.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "auth.types.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\types\\auth.types.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\types\\auth.types.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\types\\auth.types.ts",
+              "RelativeToolTip": "gateway\\src\\types\\auth.types.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:28:43.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "users.controller.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\modules\\users\\users.controller.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\modules\\users\\users.controller.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\modules\\users\\users.controller.ts",
+              "RelativeToolTip": "gateway\\src\\modules\\users\\users.controller.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:27:01.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "auth.service.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\modules\\auth\\auth.service.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\modules\\auth\\auth.service.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\modules\\auth\\auth.service.ts",
+              "RelativeToolTip": "gateway\\src\\modules\\auth\\auth.service.ts",
+              "ViewState": "AgIAACsAAAAAAAAAAAAwwD8AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:53:57.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "auth.controller.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\modules\\auth\\auth.controller.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\modules\\auth\\auth.controller.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\modules\\auth\\auth.controller.ts",
+              "RelativeToolTip": "gateway\\src\\modules\\auth\\auth.controller.ts",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwB8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:44:34.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "router.types.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\types\\router.types.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\types\\router.types.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\types\\router.types.ts",
+              "RelativeToolTip": "frontend\\src\\types\\router.types.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:04:14.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "auth.module.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\modules\\auth\\auth.module.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\modules\\auth\\auth.module.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\modules\\auth\\auth.module.ts",
+              "RelativeToolTip": "gateway\\src\\modules\\auth\\auth.module.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:48:32.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "users.module.ts",
+              "DocumentMoniker": "D:\\pvd\\gateway\\src\\modules\\users\\users.module.ts",
+              "RelativeDocumentMoniker": "gateway\\src\\modules\\users\\users.module.ts",
+              "ToolTip": "D:\\pvd\\gateway\\src\\modules\\users\\users.module.ts",
+              "RelativeToolTip": "gateway\\src\\modules\\users\\users.module.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:26:57.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "users.module.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\modules\\users\\users.module.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\modules\\users\\users.module.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\modules\\users\\users.module.ts",
+              "RelativeToolTip": "users-service\\src\\modules\\users\\users.module.ts",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:14:19.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "type-orm.module.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\modules\\type-orm\\type-orm.module.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\modules\\type-orm\\type-orm.module.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\modules\\type-orm\\type-orm.module.ts",
+              "RelativeToolTip": "users-service\\src\\modules\\type-orm\\type-orm.module.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:13:50.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "main.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\main.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\main.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\main.ts",
+              "RelativeToolTip": "users-service\\src\\main.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:13:22.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "getConfig.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\utils\\getConfig.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\utils\\getConfig.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\utils\\getConfig.ts",
+              "RelativeToolTip": "users-service\\src\\utils\\getConfig.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:12:45.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "index.ts",
+              "DocumentMoniker": "D:\\pvd\\users-service\\src\\store\\index.ts",
+              "RelativeDocumentMoniker": "users-service\\src\\store\\index.ts",
+              "ToolTip": "D:\\pvd\\users-service\\src\\store\\index.ts",
+              "RelativeToolTip": "users-service\\src\\store\\index.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T12:12:38.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "LoginFormInputs.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginFormInputs.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\LoginForm\\LoginFormInputs.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginFormInputs.ts",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\LoginForm\\LoginFormInputs.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:49:13.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "LoginForm.types.ts",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginForm.types.ts",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\LoginForm\\LoginForm.types.ts",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginForm.types.ts",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\LoginForm\\LoginForm.types.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-08T11:49:23.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "LoginForm.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginForm.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\components\\forms\\LoginForm\\LoginForm.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\components\\forms\\LoginForm\\LoginForm.vue",
+              "RelativeToolTip": "frontend\\src\\components\\forms\\LoginForm\\LoginForm.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-08T11:49:05.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "RegisterView.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\views\\RegisterView.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\views\\RegisterView.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\views\\RegisterView.vue",
+              "RelativeToolTip": "frontend\\src\\views\\RegisterView.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-08T11:32:06.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "PrimaryLayout.vue",
+              "DocumentMoniker": "D:\\pvd\\frontend\\src\\layouts\\Header-Footer\\PrimaryLayout.vue",
+              "RelativeDocumentMoniker": "frontend\\src\\layouts\\Header-Footer\\PrimaryLayout.vue",
+              "ToolTip": "D:\\pvd\\frontend\\src\\layouts\\Header-Footer\\PrimaryLayout.vue",
+              "RelativeToolTip": "frontend\\src\\layouts\\Header-Footer\\PrimaryLayout.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-02-08T11:27:34.413Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

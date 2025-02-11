@@ -5,8 +5,13 @@ import type { JWTUser } from "@DTOs/users.dto";
  */
 export class AuthRequestDTO {
   public email: string;
-
-  public password: string;
+    public fullName: string;
+    public password: string;
+    public number: string;
+    public vuz: string;
+    public vuz_direction: string;
+    public code_speciality: string;
+    public course: string;
 }
 
 /**
