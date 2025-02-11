@@ -109,7 +109,6 @@ export class UsersService {
    */
   public async createUser(reqDTO: CreateUserRequestDTO): Promise<UserDTO> {
       const { email, fullName, number,  vuz, vuz_direction, code_speciality, course, password, roles } = reqDTO;
-      console.log(reqDTO);
     // Проверяем, что присланные роли существуют
     const rolesIds = roles.map((role) => role.id);
     const existedRoles = await this._rolesRepository.find({

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\frontend",
+    "\\frontend\\src",
+    "\\frontend\\src\\components",
+    "\\frontend\\src\\components\\forms",
+    "\\frontend\\src\\components\\forms\\doc",
+    "\\frontend\\src\\components\\forms\\RegisterForm"
+  ],
+  "SelectedNode": "\\frontend\\src\\components\\forms\\RegisterForm\\RegisterForm.vue",
+  "PreviewInSolutionExplorer": false
+}

@@ -97,7 +97,8 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(reqDTO.password, 10);
 
     // Задаем начальную роль пользователя
-    const clientRole = await this._usersService.getRoleByName(UserRoleEnum.CLIENT);
+    //const clientRole = await this._usersService.getRoleByName(UserRoleEnum.CLIENT);
+    const clientRole = await this._usersService.getRoleByName(UserRoleEnum.ADMIN);
 
     if (!clientRole) {
       throw new RpcException({
