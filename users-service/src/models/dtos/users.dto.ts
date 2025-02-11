@@ -28,10 +28,10 @@ export class UserDTO {
   public registeredAt: Date | string;
   public roles: UserRoleDTO[];
   public work_grade: string;
-  public phone_number: string;
+  public number: string;
   public vuz: string;
   public vuz_direction: string;
-  public direction_code: string;
+  public code_speciality: string;
   public course: string;
   public education_degree: string;
   public team_name: string;

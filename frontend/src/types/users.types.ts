@@ -18,10 +18,10 @@ export interface UserDTO {
   registeredAt: Date | string;
   roles: UserRoleDTO[];
   work_grade: string;
-  phone_number: string;
+  number: string;
   vuz: string;
   vuz_direction: string;
-  direction_code: string;
+  code_speciality: string;
   course: string;
   education_degree: string;
   team_name: string;

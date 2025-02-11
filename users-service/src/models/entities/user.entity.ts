@@ -38,8 +38,8 @@ export class User {
   @Column({ name: 'work_grade', type: 'varchar', length: 255, nullable: true })
   public work_grade: string;
 
-  @Column({ name: 'phone_number', type: 'varchar', length: 255, nullable: true })
-  public phone_number: string;
+  @Column({ name: 'number', type: 'varchar', length: 255, nullable: true })
+  public number: string;
 
   @Column({ name: 'vuz', type: 'varchar', length: 255, nullable: true })
   public vuz: string;
@@ -47,8 +47,8 @@ export class User {
   @Column({ name: 'vuz_direction', type: 'varchar', length: 255, nullable: true })
   public vuz_direction: string;
 
-  @Column({ name: 'direction_code', type: 'varchar', length: 255, nullable: true })
-  public direction_code: string;
+  @Column({ name: 'code_speciality', type: 'varchar', length: 255, nullable: true })
+  public code_speciality: string;
 
   @Column({ name: 'course', type: 'varchar', length: 255, nullable: true })
   public course: string;
