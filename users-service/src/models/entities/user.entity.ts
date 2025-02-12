@@ -65,6 +65,9 @@ export class User {
   @Column({ name: 'entry_sent', type: 'varchar', length: 255, nullable: true })
   public entry_sent: boolean;
 
+  @Column({ name: 'work_sent', type: 'varchar', length: 255, nullable: true })
+  public work_sent: boolean;
+
   @Column({ name: 'user_valid', type: 'varchar', length: 255, nullable: true })
   public user_valid: boolean;
 

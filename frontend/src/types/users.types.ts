@@ -27,6 +27,7 @@ export interface UserDTO {
   team_name: string;
   team_motto: string;
   entry_sent: boolean;
+  work_sent: boolean;
   user_valid: boolean;
   team_member_1_id: string;
   team_member_2_id: string;

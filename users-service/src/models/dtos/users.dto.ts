@@ -38,6 +38,7 @@ export class UserDTO {
   public team_name: string;
   public team_motto: string;
   public entry_sent: boolean;
+  public work_sent: boolean;
   public user_valid: boolean;
   public team_member_1_id: string;
   public team_member_2_id: string;

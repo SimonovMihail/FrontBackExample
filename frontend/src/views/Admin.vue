@@ -6,71 +6,59 @@
         <div class="content-container">
           <div class="team-list-container">
             <h3 class="team-list-container__name">Список команд</h3>
-            <div>
+            <div class="teams_list_container">
               <el-scrollbar class="scrollbar-content" height="400px">
                 <p v-for="team in teams_list" :key="team.id" class="team-item"><span>{{ team.team_name }}</span>
-                  <el-button class="button-open-team-information">Посмотреть информацию</el-button>
+                  <el-button class="button-open-team-information">Посмотреть заявку</el-button>
                 </p>
               </el-scrollbar>
             </div>
           </div>
           <div class="user-list-container">
             <h3 class="user-list-container__name">Список пользователей</h3>
-            <div>
-              <el-form
-                  :model="userRolesFormModel"
-                  ref="userRolesFormRef"
-                  class="user-roles-form"
-                  @submit.prevent="saveUserRoles"
-              >
-                <el-scrollbar class="scrollbar-content" height="400px">
-                  <p class="user-item user-item__1"><span>Иванов Иван Иванович</span>
-                    <el-button class="button-open-user-information">Посмотреть информацию</el-button>
-                    <el-form-item class="roles1_value" prop="roles1_value"> <!-- Это выпадающее меню -->
-                      <el-select
-                          v-model="userRolesFormModel.roles1_value"
-                          placeholder="Выбор роли"
-                          size="medium"
-                          class="roles1_value__select"
-                          style="width: 120px"
-                      > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
-                        <el-option
-                            v-for="role1 in roles1"
-                            :key="role1.roles1_value"
-                            :label="role1.roles1_value"
-                            :value="role1.roles1_value"
-                        />
-                      </el-select>
-                    </el-form-item>
-                  </p>
-                  <p class="user-item user-item__2"><span>Тамарова Тамара Тамаровна</span>
-                    <el-button class="button-open-user-information">Посмотреть информацию</el-button>
-                    <el-form-item class="roles2_value" prop="roles2_value"> <!-- Это выпадающее меню -->
-                      <el-select
-                          v-model="userRolesFormModel.roles2_value"
-                          placeholder="Выбор роли"
-                          size="medium"
-                          class="roles2_value__select"
-                          style="width: 120px"
-                      > <!-- не трогай этот инлайновый стиль, иначе взрыв -->
-                        <el-option
-                            v-for="role2 in roles2"
-                            :key="role2.roles2_value"
-                            :label="role2.roles2_value"
-                            :value="role2.roles2_value"
-                        />
-                      </el-select>
-                    </el-form-item>
-                  </p>
-                </el-scrollbar>
-              </el-form>
+            <div v-if="listTypeSelect === 'all'" class="users_list_container">
+              <el-scrollbar class="scrollbar-content" height="400px">
+                <p v-for="user in users_list" :key="user.id" class="user-item"><span>{{ user.fullName }}</span>
+                  <el-button class="button-open-user-information">Посмотреть информацию</el-button>
+                </p>
+              </el-scrollbar>
             </div>
-            <div class="button-container-users">
-              <el-button class="button-confirm-users" type="primary" @click="saveUserRoles">Сохранить роли</el-button>
-              <el-button class="button-cancel-users" type="info" @click="cancelUserRoles">Отменить изменения</el-button>
+            <div v-if="listTypeSelect === 'valid_users'" class="valid_users_list_container">
+              <el-scrollbar class="scrollbar-content" height="400px">
+                <p v-for="user in valid_users_list" :key="user.id" class="user-item"><span>{{ user.fullName }}</span>
+                  <el-button class="button-open-user-information">Посмотреть информацию</el-button>
+                </p>
+              </el-scrollbar>
             </div>
+            <div v-if="listTypeSelect === 'non_valid_users'" class="non_valid_users_list_container">
+              <el-scrollbar class="scrollbar-content" height="400px">
+                <p v-for="user in non_valid_users_list" :key="user.id" class="user-item"><span>{{ user.fullName }}</span>
+                  <el-button class="button-open-user-information">Посмотреть информацию</el-button>
+                </p>
+              </el-scrollbar>
+            </div>
+            <div v-if="listTypeSelect === 'judges'" class="judges_list_container">
+              <el-scrollbar class="scrollbar-content" height="400px">
+                <p v-for="user in judges_list" :key="user.id" class="user-item"><span>{{ user.fullName }}</span>
+                  <el-button class="button-open-user-information">Посмотреть информацию</el-button>
+                </p>
+              </el-scrollbar>
+            </div>
+            <div v-if="listTypeSelect === 'admins'" class="admins_list_container">
+              <el-scrollbar class="scrollbar-content" height="400px">
+                <p v-for="user in admins_list" :key="user.id" class="user-item"><span>{{ user.fullName }}</span>
+                  <el-button class="button-open-user-information">Посмотреть информацию</el-button>
+                </p>
+              </el-scrollbar>
+            </div>
+            <el-radio-group class="list-type-radio-group-container" v-model="listTypeSelect" size="normal">
+              <el-radio-button label="Все пользователи" value="all"/>
+              <el-radio-button label="Проверенные" value="valid_users"/>
+              <el-radio-button label="Не проверенные" value="non_valid_users"/>
+              <el-radio-button label="Жюри" value="judges"/>
+              <el-radio-button label="Админы" value="admins"/>
+            </el-radio-group>
           </div>
-
           <div class="finished-projects-container">
             <h3 class="finished-projects-container__name">Список готовых работ</h3>
             <el-form
@@ -81,64 +69,10 @@
                 @submit.prevent="saveFinishedProjectsGrades"
             >
               <el-scrollbar class="scrollbar-content" height="400px">
-                <p class="finished-project-item finished-project-item__1"><span>"Большая команда"</span>
+                <p class="finished-project-item"><span>"Большая команда"</span>
                   <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item"  prop="grade1">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade1"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__2"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade2">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade2"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__3"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade3">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade3"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__4"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade4">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade4"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__5"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade5">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade5"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__6"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade6">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade6"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__7"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade7">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade7"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__8"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade8">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade8"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__9"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade9">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade9"></el-input>
-                  </el-form-item>
-                </p>
-                <p class="finished-project-item finished-project-item__10"><span>"Большая команда"</span>
-                  <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item" prop="grade10">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade10"></el-input>
+                  <el-form-item class="grade-item"  prop="grade">
+                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade"></el-input>
                   </el-form-item>
                 </p>
               </el-scrollbar>
@@ -160,92 +94,51 @@ import {ElButton, ElForm, ElInput, ElScrollbar, FormInstance, FormRules} from "e
 import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
 import {onMounted, ref} from 'vue';
 import api from '@/api';
-import type { UserDTO } from '@/types/users.types';
+import {type UserDTO, UserRoleEnum} from '@/types/users.types';
+
+const listTypeSelect = ref('all');
 
 const users_list = ref<UserDTO[] | null>(null);
 const valid_users_list = ref<UserDTO[] | null>(null);
 const non_valid_users_list = ref<UserDTO[] | null>(null);
+const admins_list = ref<UserDTO[] | null>(null);
+const judges_list = ref<UserDTO[] | null>(null);
 const teams_list = ref<UserDTO[] | null>(null);
+const works_list = ref<UserDTO[] | null>(null);
 
 onMounted(async () => {
   const result = await api.users.useUsersList();
 
-  // Полный список всех пользователей
+  // Полный список всех пользователей (включая админов и жюри)
   users_list.value = result.map(user => ({ ...user }));
 
   // Список проверенных пользователей
-  valid_users_list.value = result.filter(user => user.user_valid);
+  valid_users_list.value = result.filter(
+      user => user.user_valid && !(user.roles.map(({ name }) => name).includes(UserRoleEnum.ADMIN)) &&
+          !(user.roles.map(({ name }) => name).includes(UserRoleEnum.JUDGE))
+  );
 
   // Список непроверенных пользователей
-  non_valid_users_list.value = result.filter(user => !user.user_valid);
+  non_valid_users_list.value = result.filter(
+      user => !user.user_valid && !(user.roles.map(({ name }) => name).includes(UserRoleEnum.ADMIN)) &&
+          !(user.roles.map(({ name }) => name).includes(UserRoleEnum.JUDGE))
+  );
+
+  // Список админов
+  admins_list.value = result.filter(user => user.roles.map(({ name }) => name).includes(UserRoleEnum.ADMIN))
+
+  // Список жюри
+  judges_list.value = result.filter(user => user.roles.map(({ name }) => name).includes(UserRoleEnum.JUDGE))
 
   // Список команд (entry_sent === true)
   teams_list.value = result.filter(user => user.entry_sent);
+
+  // Список команд (entry_sent === true)
+  works_list.value = result.filter(user => user.work_sent);
 });
-
-const userRolesFormModel = ref({
-  roles1_value: 'Участник',
-  roles2_value: 'Участник',
-});
-
-const roles1 = [
-  {
-    roles1_value: 'Участник',
-    roles1_label: 'Участник',
-  },
-  {
-    roles1_value: 'Жюри',
-    roles1_label: 'Жюри',
-  },
-  {
-    roles1_value: 'Админ',
-    roles1_label: 'Админ',
-  },
-];
-
-const roles2 = [
-  {
-    roles2_value: 'Участник',
-    roles2_label: 'Участник',
-  },
-  {
-    roles2_value: 'Жюри',
-    roles2_label: 'Жюри',
-  },
-  {
-    roles2_value: 'Админ',
-    roles2_label: 'Админ',
-  },
-];
-
-const userRolesFormRef = ref<FormInstance>();
-
-const saveUserRoles = () => {
-  userRolesFormRef.value?.validate((valid) => {
-    if (valid) {
-      console.log('Form sent', userRolesFormModel.value);
-      console.log(
-          userRolesFormModel.value.roles1_value,
-          userRolesFormModel.value.roles2_value,
-      );
-    } else {
-      console.error('Form error');
-      alert('Выберите роли пользователям!');
-    }
-  });
-};
 
 const finishedProjectsGradesFormModel = ref({
-  grade1: '',
-  grade2: '',
-  grade3: '',
-  grade4: '',
-  grade5: '',
-  grade6: '',
-  grade7: '',
-  grade8: '',
-  grade9: '',
-  grade10: '',
+  grade: '',
 });
 
 const finishedProjectsGradesFormRef = ref<FormInstance>();
@@ -255,16 +148,7 @@ const saveFinishedProjectsGrades = () => {
     if (valid) {
       console.log('Form sent', finishedProjectsGradesFormModel.value);
       console.log(
-          finishedProjectsGradesFormModel.value.grade1,
-          finishedProjectsGradesFormModel.value.grade2,
-          finishedProjectsGradesFormModel.value.grade3,
-          finishedProjectsGradesFormModel.value.grade4,
-          finishedProjectsGradesFormModel.value.grade5,
-          finishedProjectsGradesFormModel.value.grade6,
-          finishedProjectsGradesFormModel.value.grade7,
-          finishedProjectsGradesFormModel.value.grade8,
-          finishedProjectsGradesFormModel.value.grade9,
-          finishedProjectsGradesFormModel.value.grade10,
+          finishedProjectsGradesFormModel.value.grade,
       );
     } else {
       console.error('Form error');
@@ -286,43 +170,7 @@ const checkGradeCorrection = function(rule: any, value: any, callback: any) {
 };
 
 const rules_grades: FormRules = {
-  grade1: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade2: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade3: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade4: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade5: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade6: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade7: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade8: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade9: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade10: [
+  grade: [
     { required: true, message: "Введите оценку", trigger: 'blur' },
     { validator: checkGradeCorrection, trigger: 'blur' },
   ],
@@ -370,6 +218,10 @@ const rules_grades: FormRules = {
 
 .team-list-container__name, .user-list-container__name, .finished-projects-container__name {
   margin-bottom: 20px;
+}
+
+.list-type-radio-group-container {
+  margin-top: 10px;
 }
 
 /* GRID AREA STREET NIGGA */
