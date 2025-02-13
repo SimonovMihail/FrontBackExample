@@ -61,25 +61,12 @@
           </div>
           <div class="finished-projects-container">
             <h3 class="finished-projects-container__name">Список готовых работ</h3>
-            <el-form
-                :model="finishedProjectsGradesFormModel"
-                ref="finishedProjectsGradesFormRef"
-                class="finished-projects-grades-form"
-                :rules="rules_grades"
-                @submit.prevent="saveFinishedProjectsGrades"
-            >
+            <div class="works_list_container">
               <el-scrollbar class="scrollbar-content" height="400px">
-                <p class="finished-project-item"><span>"Большая команда"</span>
+                <p v-for="work in works_list" :key="work.id" class="finished-project-item"><span>{{ work.team_name }}</span>
                   <el-button class="download-finished-project-button">Скачать работу</el-button>
-                  <el-form-item class="grade-item"  prop="grade">
-                    <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade"></el-input>
-                  </el-form-item>
                 </p>
               </el-scrollbar>
-            </el-form>
-            <div class="button-container-grades">
-              <el-button class="button-confirm-grades" type="primary" @click="saveFinishedProjectsGrades">Сохранить оценки</el-button>
-              <el-button class="button-cancel-grades" type="info" @click="cancelFinishedProjectsGrades">Отменить изменения</el-button>
             </div>
           </div>
         </div>
@@ -137,44 +124,44 @@ onMounted(async () => {
   works_list.value = result.filter(user => user.work_sent);
 });
 
-const finishedProjectsGradesFormModel = ref({
-  grade: '',
-});
+// const finishedProjectsGradesFormModel = ref({
+//   grade: '',
+// });
 
-const finishedProjectsGradesFormRef = ref<FormInstance>();
+// const finishedProjectsGradesFormRef = ref<FormInstance>();
 
-const saveFinishedProjectsGrades = () => {
-  finishedProjectsGradesFormRef.value?.validate((valid) => {
-    if (valid) {
-      console.log('Form sent', finishedProjectsGradesFormModel.value);
-      console.log(
-          finishedProjectsGradesFormModel.value.grade,
-      );
-    } else {
-      console.error('Form error');
-      alert('Заполните недостающие поля с оценками!');
-    }
-  });
-};
+// const saveFinishedProjectsGrades = () => {
+//   finishedProjectsGradesFormRef.value?.validate((valid) => {
+//     if (valid) {
+//       console.log('Form sent', finishedProjectsGradesFormModel.value);
+//       console.log(
+//           finishedProjectsGradesFormModel.value.grade,
+//       );
+//     } else {
+//       console.error('Form error');
+//       alert('Заполните недостающие поля с оценками!');
+//     }
+//   });
+// };
 
-const value = ref(0);
+// const value = ref(0);
 
-const checkGradeCorrection = function(rule: any, value: any, callback: any) {
-  const number = Number(value);
-  if (isNaN(number)) {
-    callback(new Error("Значение должно быть числом"));
-  }
-  else if (number < 1 || number > 50) {
-    callback(new Error("Оценка только от 1 до 50"));
-  }
-};
-
-const rules_grades: FormRules = {
-  grade: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-};
+// const checkGradeCorrection = function(rule: any, value: any, callback: any) {
+//   const number = Number(value);
+//   if (isNaN(number)) {
+//     callback(new Error("Значение должно быть числом"));
+//   }
+//   else if (number < 1 || number > 50) {
+//     callback(new Error("Оценка только от 1 до 50"));
+//   }
+// };
+//
+// const rules_grades: FormRules = {
+//   grade: [
+//     { required: true, message: "Введите оценку", trigger: 'blur' },
+//     { validator: checkGradeCorrection, trigger: 'blur' },
+//   ],
+// };
 
 
 </script>
