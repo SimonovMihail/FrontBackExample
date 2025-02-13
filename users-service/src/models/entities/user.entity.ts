@@ -71,6 +71,9 @@ export class User {
   @Column({ name: 'user_valid', type: 'varchar', length: 255, nullable: true })
   public user_valid: boolean;
 
+  @Column({ name: 'team_valid', type: 'varchar', length: 255, nullable: true })
+  public team_valid: boolean;
+
   @Column({ name: 'team_member_1_id', type: 'varchar', length: 255, nullable: true })
   public team_member_1_id: string;
 
@@ -82,4 +85,7 @@ export class User {
 
   @Column({ name: 'team_member_4_id', type: 'varchar', length: 255, nullable: true })
   public team_member_4_id: string;
+
+  @Column({ name: 'mentor_id', type: 'varchar', length: 255, nullable: true })
+  public mentor_id: string;
 }

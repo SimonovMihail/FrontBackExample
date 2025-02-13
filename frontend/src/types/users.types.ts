@@ -29,10 +29,12 @@ export interface UserDTO {
   entry_sent: boolean;
   work_sent: boolean;
   user_valid: boolean;
+  team_valid: boolean;
   team_member_1_id: string;
   team_member_2_id: string;
   team_member_3_id: string;
   team_member_4_id: string;
+  mentor_id: string;
 }
 
 /**

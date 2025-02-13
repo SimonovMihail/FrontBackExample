@@ -33,10 +33,12 @@ export class UserDTO {
   public entry_sent: boolean;
   public work_sent: boolean;
   public user_valid: boolean;
+  public team_valid: boolean;
   public team_member_1_id: string;
   public team_member_2_id: string;
   public team_member_3_id: string;
   public team_member_4_id: string;
+  public mentor_id: string;
 }
 
 /**
