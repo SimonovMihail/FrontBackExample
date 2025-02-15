@@ -3,81 +3,12 @@
     <div class="wrapper">
       <div class="wrapper__main-container">
         <h1 class="main-container-name">Страница жюри</h1>
-        <div class="finished-projects-container">
-          <el-form
-              :model="finishedProjectsGradesFormModel"
-              ref="finishedProjectsGradesFormRef"
-              class="finished-projects-grades-form"
-              :rules="rules_grades"
-              @submit.prevent="saveFinishedProjectsGrades"
-          >
-            <el-scrollbar class="scrollbar-content" height="400px">
-              <p class="finished-project-item finished-project-item__1"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item"  prop="grade1">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade1"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__2"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade2">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade2"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__3"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade3">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade3"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__4"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade4">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade4"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__5"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade5">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade5"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__6"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade6">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade6"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__7"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade7">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade7"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__8"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade8">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade8"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__9"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade9">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade9"></el-input>
-                </el-form-item>
-              </p>
-              <p class="finished-project-item finished-project-item__10"><span>"Большая команда"</span>
-                <el-button class="download-finished-project-button">Скачать работу</el-button>
-                <el-form-item class="grade-item" prop="grade10">
-                  <el-input class="input-grade" placeholder="Оценка" v-model="finishedProjectsGradesFormModel.grade10"></el-input>
-                </el-form-item>
-              </p>
-            </el-scrollbar>
-          </el-form>
-          <div class="button-container-grades">
-            <el-button class="button-confirm-grades" type="primary" @click="saveFinishedProjectsGrades">Сохранить оценки</el-button>
-            <el-button class="button-cancel-grades" type="info" @click="cancelFinishedProjectsGrades">Отменить изменения</el-button>
-          </div>
+        <div class="works_list_container">
+          <el-scrollbar class="scrollbar-content" height="400px">
+            <p v-for="work in works_list" :key="work.id" class="finished-project-item"><span>{{ work.team_name }}</span>
+              <el-button class="download-finished-project-button">Скачать работу</el-button>
+            </p>
+          </el-scrollbar>
         </div>
       </div>
     </div>
@@ -86,106 +17,19 @@
 
 
 <script lang="ts" setup>
-import {ElButton, ElForm, ElInput, ElScrollbar, FormInstance, FormRules} from "element-plus";
-import {ref} from "vue";
+import {ElButton, ElScrollbar} from "element-plus";
+import {onMounted, ref} from "vue";
 import PrimaryLayout from '../layouts/Header-Footer/PrimaryLayout.vue';
+import type {UserDTO} from "@/types/users.types.ts";
+import api from "@/api";
 
-const finishedProjectsGradesFormModel = ref({
-  grade1: '',
-  grade2: '',
-  grade3: '',
-  grade4: '',
-  grade5: '',
-  grade6: '',
-  grade7: '',
-  grade8: '',
-  grade9: '',
-  grade10: '',
-});
+const works_list = ref<UserDTO[] | null>(null);
 
-const finishedProjectsGradesFormRef = ref<FormInstance>();
+onMounted(async() => {
+  const result = await api.users.useUsersList();
 
-const saveFinishedProjectsGrades = () => {
-  finishedProjectsGradesFormRef.value?.validate((valid) => {
-    if (valid) {
-      console.log('Form sent', finishedProjectsGradesFormModel.value);
-      console.log(
-          finishedProjectsGradesFormModel.value.grade1,
-          finishedProjectsGradesFormModel.value.grade2,
-          finishedProjectsGradesFormModel.value.grade3,
-          finishedProjectsGradesFormModel.value.grade4,
-          finishedProjectsGradesFormModel.value.grade5,
-          finishedProjectsGradesFormModel.value.grade6,
-          finishedProjectsGradesFormModel.value.grade7,
-          finishedProjectsGradesFormModel.value.grade8,
-          finishedProjectsGradesFormModel.value.grade9,
-          finishedProjectsGradesFormModel.value.grade10,
-      );
-    } else {
-      console.error('Form error');
-      alert('Заполните недостающие поля с оценками!');
-    }
-  });
-};
-
-const scroll = ({ scrollTop }) => {
-  value.value = scrollTop;
-};
-
-const value = ref(0);
-
-const checkGradeCorrection = function(rule: any, value: any, callback: any) {
-  const number = Number(value);
-  if (isNaN(number)) {
-    callback(new Error("Значение должно быть числом"));
-  }
-  else if (number < 1 || number > 50) {
-    callback(new Error("Оценка только от 1 до 50"));
-  }
-}
-
-const rules_grades: FormRules = {
-  grade1: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade2: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade3: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade4: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade5: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade6: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade7: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade8: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade9: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-  grade10: [
-    { required: true, message: "Введите оценку", trigger: 'blur' },
-    { validator: checkGradeCorrection, trigger: 'blur' },
-  ],
-};
+  works_list.value = result.filter(user => user.work_sent);
+})
 </script>
 
 
